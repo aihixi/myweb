@@ -1,0 +1,136 @@
+.myPCcard {
+  /* width: 100%; */
+  /* height: 400px; */
+  height:100%;
+  /* flex: 1; */
+  padding: 4px;
+  display: flex; /* 添加弹性盒子布局 */
+  justify-content: center; /* 水平居中 */
+  overflow: hidden;
+}
+
+.myPC {
+  display: flex;
+  width: 400px;
+  flex: auto;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
+}
+
+.mylightbulb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  height: 300px;
+}
+
+.mylightbulbicon {
+  border-radius: 999px;
+  transform: rotate(180deg);
+  color: #C0C0C0;
+  box-shadow: 0 0 0 0 yellow;
+  transition: color 0.5s, box-shadow 0.5s;
+}
+
+.myPCcard:hover .mylightbulbicon {
+  color: #E0C800;
+  box-shadow: 0 12px 40px 10px yellow;
+}
+
+.myPCscreen {
+  width: 90%;
+  height: 200px;
+  background-color: #C0C0C0;
+  border-radius: 16px;
+  border: 4px solid black;
+  box-shadow: 0 0 0 0 #9BE7FF;
+  transition: 
+    background-color 0.5s,
+    box-shadow 0.5s;
+}
+
+.myPCcard:hover .myPCscreen {
+  background-color: #5EB2FC;
+  box-shadow: 0 12px 40px 10px #9BE7FF;
+}
+
+
+.myscreencontent {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.firstline,
+.secondline,
+.thirdline,
+.fourthline,
+.fifthline,
+.sixthline,
+.seventhline,
+.eighthline,
+.ninthline {
+  width: 0;
+  height: 10px;
+  background-color: black;
+  margin-top: 8px;
+  border-radius: 8px;
+  transition: width 0.5s ease-out; /* 离开时倒回动画 */
+}
+
+/* hover 时停在 50% 状态 */
+.myPCcard:hover .firstline { width: 30%; }
+.myPCcard:hover .secondline { width: 20%; }
+.myPCcard:hover .thirdline { width: 40%; }
+.myPCcard:hover .fourthline { width: 60%; }
+.myPCcard:hover .fifthline { width: 80%; }
+.myPCcard:hover .sixthline { width: 40%; }
+.myPCcard:hover .seventhline { width: 60%; }
+.myPCcard:hover .eighthline { width: 20%; }
+.myPCcard:hover .ninthline { width: 30%; }
+
+
+.myPCkeyboard { 
+    width: 100%;
+    height: 20px;
+    background-color: black;
+    margin-top: 10px;
+    border-radius: 16px;
+}
+
+.scrollcontainer {
+  color: transparent;
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  flex-direction: row  ;
+}
+
+.myPCcard:hover .scrollcontainer { 
+  color: #9BE7FF;
+  color: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, purple);
+  animation: 
+    scrollcolorChange 3s infinite linear,
+    scroll-left 5s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+
+@keyframes scrollcolorChange {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.scrolltext { 
+  display: inline-block;
+  /* transition: transform 5s ; */
+}
+

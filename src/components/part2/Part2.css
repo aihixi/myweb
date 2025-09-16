@@ -1,0 +1,53 @@
+.part2 {
+    display: grid;
+    /* width: 400px; */
+    grid-template-columns: repeat(2, 1fr); /* 一行3列 */
+    column-gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.part2content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    /* height: 100vh; */
+}
+
+.part2leftcard {
+    /* width: 100%; */
+    /* height: 400px; */
+    height:100%;
+    /* flex: 1; */
+    padding: 4px;
+    display: flex; /* 添加弹性盒子布局 */
+    justify-content: center; /* 垂直居中 */
+    align-items: center; /* 水平居中 */
+}
+
+.part2leftcardfilped {
+  /* width: 100%; */
+    /* height: 400px; */
+    /* flex: 1; */
+    padding: 4px;
+    display: flex; /* 添加弹性盒子布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.part1img {
+    width: 50%;
+    /* height: 300px; */
+    flex: 1;
+    padding: 20px;
+}
+
+.myicon { 
+    background-color: white;
+    border-radius: 8px;
+}
+
+.myicon:hover { 
+    background-color: #f0f0f0;
+}

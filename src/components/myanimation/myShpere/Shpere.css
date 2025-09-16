@@ -1,0 +1,116 @@
+.spherediv {
+    width: 300px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url('../../../assets/image/imgsvg/laptop_zobkvkkw3jr9.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.glasses {
+    width: 120px;
+    height: 120px;
+    z-index: 10;
+}
+
+.sphereball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, purple);
+  background-size: 400% 400%;
+  animation: 
+    shperebounce 1s infinite ease-in-out,
+    colorChange 3s infinite linear;
+  animation-play-state: paused;
+  z-index: 2;
+  /* 初始没有动画 */
+}
+
+.part2ballshadow {
+  width: 80px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin-top: 10px;
+  filter: blur(2px);
+  animation: shadowBounce 1s infinite;
+  animation-play-state: paused;
+}
+
+.mymouse {
+  width: 64px;
+  color: #3282F6;
+  animation: mousemove 1s infinite;
+  animation-play-state: paused;
+  transform-origin: bottom;
+}
+
+/* hover 时才加动画 */
+/* .part2leftcard:hover .part2ball {
+  animation-play-state: running;
+}
+
+.part2leftcard:hover .part2ballshadow {
+  animation-play-state: running;
+} */
+
+/* 弹跳 - 一个完整循环包括上弹和下落 */
+@keyframes shperebounce {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-80px);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+
+/* 阴影动画与球的弹跳同步 */
+@keyframes shadowBounce {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* 颜色渐变 */
+@keyframes colorChange {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes mousemove {
+  0% {
+    transform:
+      /* translateX(0px) */
+      rotate(0deg)
+  }
+  50% {
+    transform:
+      /* translateX(20px) */
+      rotate(-20deg)
+  }
+  100% {
+    transform:
+      /* translateX(0px) */
+      rotate(0deg)
+  }
+}

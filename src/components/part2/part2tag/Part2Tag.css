@@ -1,0 +1,46 @@
+.part2tag {
+    display: flex;
+}
+
+.part2tagstyle {
+    width: 100px;
+    height: 100px;
+    /* background-color: orange; */
+    border-radius: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+    position: relative; /* 使子元素绝对定位相对于此元素 */
+}
+
+.part2tagstyle img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.default {
+  display: block;
+}
+
+.hovercolor { 
+  opacity: 0;
+}
+
+.part2tagstyle:hover {
+  background-color: #f0f0f0;
+}
+
+.part2tagstyle:hover .default { 
+  display: none;
+}
+
+.default:hover {
+  opacity: 0;
+}
+
+.hovercolor:hover {
+  opacity: 1;
+}
