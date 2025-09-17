@@ -5,6 +5,9 @@ import './myAnchor.css';
 
 import Part1 from '../part1/Part1';
 import Part2 from '../part2/Part2';
+import Part3 from '../part3/Part3';
+import Part4 from '../part4/Part4';
+import Part5 from '../part5/Part5';
 
 const MyAnchor: React.FC = () => {
   return (
@@ -37,6 +40,16 @@ const MyAnchor: React.FC = () => {
               href: '#part-3',
               title: 'Part 3',
             },
+            {
+              key: 'part-4',
+              href: '#part-4',
+              title: 'Part 4',
+            },
+            {
+              key: 'part-5',
+              href: '#part-5',
+              title: 'Part 5',
+            },
           ]}
         />
       </div>
@@ -44,18 +57,24 @@ const MyAnchor: React.FC = () => {
       {/* 页面内容 */}
       <div>
         <div id="part-1" className="section section-red">
-          <div className="spacer" />
-          <div style={{height: '5%'}}/>
+          <div style={{height: '10%'}}/>
           <Part1 />
         </div>
         <div id="part-2" className="section section-blue">
-          <div className="spacer" />
-          <div style={{height: '5%'}}/>
+          <div style={{height: '10%'}}/>
           <Part2 />
         </div>
         <div id="part-3" className="section section-green">
-          <div className="spacer" />
-          <div style={{height: '5%'}}/>
+          <div style={{height: '10%'}}/>
+          <Part3 />
+        </div>
+        <div id="part-4" className="section section-yellow">
+          <div style={{height: '10%'}}/>
+          <Part4 />
+        </div>
+        <div id="part-5" className="section section-yellow"> 
+          <div style={{height: '10%'}}/>
+          <Part5 />
         </div>
       </div>
     </>

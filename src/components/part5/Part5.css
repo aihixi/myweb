@@ -1,0 +1,10 @@
+.part5 {
+  padding: 20px;
+}
+
+.projects {
+  display: flex;
+  flex-direction: row;
+  row-gap: 20px;
+  column-gap: 20px;
+}

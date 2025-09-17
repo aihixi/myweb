@@ -38,7 +38,9 @@ const Part1: React.FC = () => {
                                 document.getElementById('part-3')?.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
-                            我的联系
+                            <h1>
+                                我的联系
+                            </h1>
                         </Button>
                     </div>
                 </Card>
