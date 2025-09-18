@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import './App.css'
-import MyAnchor from './components/anchor/myAnchor'
+import NewAnchor from './components/newanchor/NewAnchor'
 
 function App() {
 
@@ -31,7 +31,8 @@ function App() {
 
   return (
     <div ref ={containerRef}>
-      <MyAnchor/>
+      {/* <MyAnchor/> */}
+      <NewAnchor/>
     </div>
   )
 }

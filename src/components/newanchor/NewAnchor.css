@@ -1,0 +1,63 @@
+/* 导航栏 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - 64px);
+  height: 64px;
+  background: linear-gradient(45deg, #60a5fa, #f472b6);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  gap: 32px;
+  z-index: 1000;
+}
+
+/* 链接样式 */
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+}
+
+.nav-link.active {
+  color: blueviolet;
+  /* font-weight: bold; */
+}
+
+/* 页面内容 */
+.content {
+  padding-top: 60px; /* 给导航留位置 */
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  scroll-margin-top: 60px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 不同 section 的背景色 */
+.section1 {
+  /* background: #f4a261; */
+}
+.section2 {
+  /* background: #2a9d8f; */
+}
+.section3 {
+  /* background: #e76f51; */
+}
+.section4 {
+  /* background: #d62828; */
+}
+.section5 {
+  /* background: #3a0e0e; */
+}
+
+/* 平滑滚动效果 */
+html {
+  scroll-behavior: smooth;
+}
