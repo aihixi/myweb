@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card } from 'antd';
 
 import { BiSolidFileHtml } from "react-icons/bi";
 import { BiSolidFileCss } from "react-icons/bi";
@@ -22,8 +21,7 @@ const Part2: React.FC = () => {
   return (
     <div>
       <div className="part2">
-        <Card
-          hoverable
+        <div
           className="part2content"
         >
           <div>
@@ -60,7 +58,7 @@ const Part2: React.FC = () => {
             <FaPython className='myicon' size={64} />
             <SiMysql className='myicon' size={64} />
           </div>
-        </Card>
+        </div>
         <Mypc />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-
 import './Part5.css';
+
 
 
 const Part5: React.FC = () => { 

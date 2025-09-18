@@ -44,12 +44,10 @@
   display: flex;
   flex-direction: column;
   height: 75vh;
+  color: black;
   /* color: #773072; */
   /* background-color: #773072; */
   /* 给卡片一个固定高度以便于控制比例 */
-  transition: 
-    transform 0.3s ease-in-out !important;
-    /* box-shadow 0.3s ease-in-out; */
 }
 
 /* .gradientlayer {
@@ -60,9 +58,4 @@
   background: red;
   z-index: -1;
 } */
-
-.part3tcard2:hover { 
-  transform: translate(0, -8px);
-  /* box-shadow: 0 12px 40px 10px #773072; */
-}
 

@@ -6,13 +6,15 @@ import Part2 from '../part2/Part2';
 import Part3 from '../part3/Part3';
 import Part4 from '../part4/Part4';
 import Part5 from '../part5/Part5';
+import Part6 from '../part6/Part6';
 
 const sections = [
   { id: "section1", label: "Section 1" },
   { id: "section2", label: "Section 2" },
   { id: "section3", label: "Section 3" },
   { id: "section4", label: "Section 4" },
-  { id: "section5", label: "Section 5"}
+  { id: "section5", label: "Section 5" },
+  { id: "section6", label: "Section 6" }
 ];
 
 const NewAchor: React.FC = () => {
@@ -69,6 +71,9 @@ const NewAchor: React.FC = () => {
         </section>
         <section id="section5" className="section section5"> 
           <Part5 />
+        </section>
+        <section id="section6" className="section section6"> 
+          <Part6 />
         </section>
       </div>
     </div>

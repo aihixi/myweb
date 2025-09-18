@@ -35,7 +35,7 @@ const Part1: React.FC = () => {
                             type="primary"
                             className='part1button'
                             onClick={() => {
-                                document.getElementById('part-3')?.scrollIntoView({ behavior: 'smooth' });
+                                document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
                             }}
                         >
                             <h1>

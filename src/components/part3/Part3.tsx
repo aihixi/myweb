@@ -36,14 +36,12 @@ const Part3: React.FC = () => {
               </div>
             </div>
           </Card>
-          <Card
+          <div
             className='part3tcard2'
-            hoverable
-            variant="borderless"
           > 
             <div >
               {/* <div className='gradientlayer' /> */}
-              <div style={{background: 'white'}}>
+              <div>
                 <h1 style={{
                       textAlign: 'left', 
                       marginLeft: '32px',
@@ -66,7 +64,7 @@ const Part3: React.FC = () => {
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
         </div>
       </div>
     );

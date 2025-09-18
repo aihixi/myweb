@@ -5,7 +5,7 @@
   left: 0;
   width: calc(100% - 64px);
   height: 64px;
-  background: linear-gradient(45deg, #60a5fa, #f472b6);
+  background: linear-gradient(45deg, #5EB2FC, #f472b6);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -55,6 +55,9 @@
 }
 .section5 {
   /* background: #3a0e0e; */
+}
+.section6 {
+  /* background: #fca311; */
 }
 
 /* 平滑滚动效果 */
