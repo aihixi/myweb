@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./NewAnchor.css";
 
-import Part1 from '../part1/Part1';
-import Part2 from '../part2/Part2';
-import Part3 from '../part3/Part3';
-import Part4 from '../part4/Part4';
-import Part5 from '../part5/Part5';
-import Part6 from '../part6/Part6';
+import Part1 from '../../views/part1/Part1';
+import Part2 from '../../views/part2/Part2';
+import Part3 from '../../views/part3/Part3';
+import Part4 from '../../views/part4/Part4';
+import Part5 from '../../views/part5/Part5';
+import Part6 from '../../views/part6/Part6';
 
 const sections = [
   { id: "section1", label: "Section 1" },
@@ -18,7 +18,7 @@ const sections = [
 ];
 
 const NewAchor: React.FC = () => {
-    const [activeId, setActiveId] = useState("");
+  const [activeId, setActiveId] = useState("");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,6 +39,7 @@ const NewAchor: React.FC = () => {
 
     return () => observer.disconnect();
   }, []);
+  
 
   return (
     <div>

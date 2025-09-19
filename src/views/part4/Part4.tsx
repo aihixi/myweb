@@ -10,7 +10,7 @@ const Part4: React.FC = () => {
   const { Meta } = Card;
 
     return (
-      <div>
+      <div style={{height: '100%', paddingTop: '64px'}}>
         <div className='part4'>
           <div> 
             <div>

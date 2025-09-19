@@ -7,7 +7,7 @@ const Part5: React.FC = () => {
 
 
   return (
-    <div>
+    <div style={{height: '100%'}}>
       <div className='part5'>
         <div> 
           <div>

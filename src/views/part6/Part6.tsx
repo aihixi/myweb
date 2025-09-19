@@ -1,13 +1,13 @@
 import React from 'react';
 import './Part6.css';
-import Part2Tag from '../part2/part2tag/Part2Tag';
+import Part2Tag from '../../components/contact/Contact';
 
 
 const Part6: React.FC = () => { 
 
 
   return (
-    <div>
+    <div style={{height: '100%', paddingTop: '64px'}}>
       <div className='part6'>
         <div> 
           <div>

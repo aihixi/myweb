@@ -1,5 +1,8 @@
 .part4 {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .projects {
@@ -10,5 +13,5 @@
 }
 
 .part4card1 { 
-  width: 30vh;
+  width: 15%;
 }
