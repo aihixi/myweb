@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card } from 'antd';
+import { Button } from 'antd';
 import './Part1.css';
 import Shpere from '../../components/myanimation/myShpere/Shpere';
 import Part1Text from '../../components/mytext/part1text/Part1Text';
@@ -10,11 +10,14 @@ const Part1: React.FC = () => {
             <div className='part1'>
                 <div
                     className='part1leftcard'
+                    // variant='borderless'
                 >
                     <Shpere />
                     {/* <img src={ig} className='part1img' /> */}
                 </div>
-                <Card hoverable className='rightcontent'>
+                <div 
+                    className='rightcontent'
+                >
                     <Part1Text />
                     <div className='buttondiv'>
                         <Button
@@ -29,7 +32,7 @@ const Part1: React.FC = () => {
                             </h1>
                         </Button>
                     </div>
-                </Card>
+                </div>
             </div>
         </div>
     );

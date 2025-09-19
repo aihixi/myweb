@@ -8,6 +8,7 @@
   background-color: transparent;
   display: flex; /* 添加弹性盒子布局 */
   justify-content: center; /* 水平居中 */
+  box-shadow: 0 4px 10px 0.1px rgba(0, 0, 0, 0.2)!important;
   overflow: hidden;
 }
 

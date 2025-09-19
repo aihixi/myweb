@@ -16,6 +16,7 @@
   padding-left: 32px;
   padding-right: 32px;
   gap: 32px;
+  box-shadow: 0 0px 10px 0.1px rgba(0, 0, 0, 0.2)!important;
   z-index: 1000;
 }
 

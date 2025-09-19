@@ -79,7 +79,7 @@ const Mypc: React.FC = () => {
 
   return (
     <Card className='myPCcard'
-      hoverable 
+      variant='borderless' 
     >
       <div style={{width: '100%'}}>
         <div className="myPC">

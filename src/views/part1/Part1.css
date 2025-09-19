@@ -8,14 +8,13 @@
 }
 
 .part1leftcard {
-    /* width: 100%; */
-    /* height: 400px; */
+    background-color: transparent;
     display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding: 4px;
+    align-items: center;
+    /* height: 100vh; */
+    /* box-shadow: 0 4px 10px 0.1px rgba(0, 0, 0, 0.2)!important; */
 }
 
 .rightcontent {
@@ -23,7 +22,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     /* height: 100vh; */
 }
 
