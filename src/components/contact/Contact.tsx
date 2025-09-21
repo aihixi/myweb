@@ -8,11 +8,11 @@ import BilibiliQR from '../../assets/image/QRcode/bilibili.png';
 
 import GithubIcon from '../../assets/image/imgsvg/github/icons8-github(2).svg';
 import GithubColorIcon from '../../assets/image/imgsvg/github/icons8-github(3).svg';
-import GithubQR from '../../assets/image/QRcode/github.png';
+// import GithubQR from '../../assets/image/QRcode/github.png';
 
 import TiktokIcon from '../../assets/image/imgsvg/tiktok/icons8-tiktok.svg';
 import TiktokColorIcon from '../../assets/image/imgsvg/tiktok/icons8-tiktok(2).svg';
-import TiktokQR from '../../assets/image/QRcode/tiktok.png';
+// import TiktokQR from '../../assets/image/QRcode/tiktok.png';
 
 import WechatIcon from '../../assets/image/imgsvg/wechat/icons8-wechat.svg';
 import WechatColorIcon from '../../assets/image/imgsvg/wechat/icons8-wechat(1).svg';
@@ -37,7 +37,7 @@ const wechatcontent = (
 const githubcontent = (
   <div>
     <h2>
-        <img src={GithubQR} alt="Github QR Code" style={{ width: '200px', height: '200px' }} />
+        <img src={BilibiliQR} alt="Github QR Code" style={{ width: '200px', height: '200px' }} />
     </h2>
   </div>
 );
@@ -45,7 +45,7 @@ const githubcontent = (
 const tiktokcontent = (
   <div>
     <h2>
-        <img src={TiktokQR} alt="Tiktok QR Code" style={{ width: '200px', height: '200px' }} />
+        <img src={BilibiliQR} alt="Tiktok QR Code" style={{ width: '200px', height: '200px' }} />
     </h2>
   </div>
 );
@@ -53,19 +53,19 @@ const tiktokcontent = (
 const Contact: React.FC = () => {
     return (
         <div className='part2tag'>
-                <Popover className='part2tagstyle' placement="bottom" content={bilibilicontent} title="Title">
+                <Popover className='part2tagstyle' placement="bottom" content={bilibilicontent} title="Bilibili">
                     <img className='default' src={BilibiliIcon} alt="Bilibili" />
                     <img className='hovercolor' src={BilibiliColorIcon} alt="Bilibili Color" />
                 </Popover >
-                <Popover className='part2tagstyle' placement="bottom" content={githubcontent} title="Title">
+                <Popover className='part2tagstyle' placement="bottom" content={githubcontent} title="Github">
                     <img className='default' src={GithubIcon} alt="Github" />
                     <img className='hovercolor' src={GithubColorIcon} alt="Github Color" />
                 </Popover>
-                <Popover className='part2tagstyle' placement="bottom" content={tiktokcontent} title="Title">
+                <Popover className='part2tagstyle' placement="bottom" content={tiktokcontent} title="Tiktok">
                     <img className='default' src={TiktokIcon} alt="Tiktok" />
                     <img className='hovercolor' src={TiktokColorIcon} alt="Tiktok Color" />
                 </Popover>
-                <Popover className='part2tagstyle' placement="bottom" content={wechatcontent} title="Title">
+                <Popover className='part2tagstyle' placement="bottom" content={wechatcontent} title="Wechat">
                     <img className='default' src={WechatIcon} alt="Wechat" />
                     <img className='hovercolor' src={WechatColorIcon} alt="Wechat Color" />
                 </Popover>

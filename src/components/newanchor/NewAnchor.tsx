@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import "./NewAnchor.css";
 
 import Part1 from '../../views/part1/Part1';
@@ -39,12 +40,44 @@ const NewAchor: React.FC = () => {
 
     return () => observer.disconnect();
   }, []);
+
+
+  const [inView, setInView] = useState(true); // 将inView改为状态
+
+  const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+    if (event.deltaY > 0) {
+      console.log("向下滚动");
+      setInView(false);
+    } else if (event.deltaY < 0) {
+      console.log("向上滚动");
+      setInView(true);
+    }
+  };
+
+  const variants = { 
+    hidden: { 
+      opacity: 0, y: -50 ,
+      transition: { duration: 0.5 }
+    },
+    visible: { 
+      opacity: 1, y: 0 ,
+      transition: { duration: 0.5 }
+    },
+
+  };
   
 
   return (
-    <div>
+    <div 
+      onWheel={handleWheel}
+    >
       {/* 导航栏 */}
-      <nav className="navbar">
+      <motion.nav
+        className="navbar"
+        initial="visible" 
+        animate={inView ? "visible" : "hidden"} 
+        variants={variants}
+      >
         {sections.map((s) => (
           <a
             key={s.id}
@@ -54,7 +87,7 @@ const NewAchor: React.FC = () => {
             {s.label}
           </a>
         ))}
-      </nav>
+      </motion.nav>
 
       {/* 页面内容 */}
       <div className="content">

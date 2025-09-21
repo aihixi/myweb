@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import './Part1.css';
 import Shpere from '../../components/myanimation/myShpere/Shpere';
 import Part1Text from '../../components/mytext/part1text/Part1Text';
+import ScrollFadeIn from '../../components/myanimation/ScrollFadeIn/ScrollFadeIn';
 
 const Part1: React.FC = () => {
     return (
@@ -15,24 +16,26 @@ const Part1: React.FC = () => {
                     <Shpere />
                     {/* <img src={ig} className='part1img' /> */}
                 </div>
-                <div 
-                    className='rightcontent'
-                >
-                    <Part1Text />
-                    <div className='buttondiv'>
-                        <Button
-                            type="primary"
-                            className='part1button'
-                            onClick={() => {
-                                document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                        >
-                            <h1>
-                                我的联系
-                            </h1>
-                        </Button>
+                <ScrollFadeIn direction='right'> 
+                    <div 
+                        className='rightcontent'
+                    >
+                        <Part1Text />
+                        <div className='buttondiv'>
+                            <Button
+                                type="primary"
+                                className='part1button'
+                                onClick={() => {
+                                    document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
+                                }}
+                            >
+                                <h1>
+                                    我的联系
+                                </h1>
+                            </Button>
+                        </div>
                     </div>
-                </div>
+                </ScrollFadeIn>
             </div>
         </div>
     );

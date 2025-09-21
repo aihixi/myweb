@@ -5,6 +5,7 @@ import './Part3.css'
 import TGlogo from '../../assets/image/imgsvg/天津工业大学-logo.svg'
 
 import Part3Text from '../../components/mytext/part3text/Part3Text';
+import ScrollFadeIn from '../../components/myanimation/ScrollFadeIn/ScrollFadeIn';
 
 const Part3: React.FC = () => { 
 
@@ -37,11 +38,9 @@ const Part3: React.FC = () => {
               </div>
             </div>
           </Card>
-          <div
-            className='part3tcard2'
-          > 
+          <ScrollFadeIn direction='right'> 
             <Part3Text />
-          </div>
+          </ScrollFadeIn>
         </div>
       </div>
     );

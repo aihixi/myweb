@@ -5,8 +5,8 @@ const Part1Text: React.FC = () => {
               textAlign: 'left', 
               marginLeft: '32px',
             }}>Introduce</h1>
-        <div style={{ fontSize: '20px', lineHeight: '1.6', padding: '0 32px' }}>
-          <p style={{ width: '90%', marginBottom: '16px', fontSize: '32px', fontWeight: 'bold', textAlign: 'left' }}>
+        <div style={{ fontSize: '20px', lineHeight: '1.6', padding: '0 32px 32px' }}>
+          <p style={{ width: '90%', fontSize: '32px', fontWeight: 'bold', textAlign: 'left' }}>
             你好，我是一名大三本科生，一名热爱编程的学生。
           </p>
           <p style={{ width: '90%', marginBottom: '16px', fontSize: '32px', textAlign: 'left' }}>

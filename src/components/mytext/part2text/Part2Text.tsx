@@ -10,6 +10,7 @@ import { SiCplusplus } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 
+import './Part2Text.css'
 const Part2Text: React.FC = () => {
     return (
       <div>

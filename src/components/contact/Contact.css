@@ -29,10 +29,6 @@
   opacity: 0;
 }
 
-.part2tagstyle:hover {
-  background-color: #f0f0f0;
-}
-
 .part2tagstyle:hover .default { 
   display: none;
 }
