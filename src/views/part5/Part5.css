@@ -1,3 +1,116 @@
 .part5 {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardgroup { 
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 32px;
+  pointer-events: none;
+}
+
+.part5firstrow,
+.part5secondrow { 
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* 🌟 公共 Card hover 效果 */
+.part5allcard {
+  transition: opacity .4s ease-in-out;
+  z-index: 0;
+  pointer-events: auto;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fc00ff , #00dbde);
+}
+
+/* 🌟 统一控制，所有卡片联动 */
+.cardgroup:hover .part5allcard:not(:hover) {
+  /* opacity: .7; */
+}
+
+/* ---------------- 每个卡片的尺寸和渐变背景 ---------------- */
+.first1 { 
+  width: 20%;
+  height: 150px;
+}
+.first2 { 
+  width: 35%;
+  height: 150px;
+}
+.first3 { 
+  width: 35%;
+  height: 150px;
+}
+
+.second1 { 
+  width: calc(30% - 5px);
+  height: 400px;
+}
+.second1card { 
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+}
+
+.second2 { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: calc(25% - 5px);
+  height: 400px;
+}
+.second2card { 
+  /* flex: 1; */
+  height: calc(50% - 7.5px);
+  overflow: hidden;
+}
+
+.second3 { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: calc(20% - 5px);
+  height: 400px;
+}
+.second3card { 
+  flex: 1;
+}
+
+.second4 { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: calc(15% - 5px);
+  height: 400px;
+}
+.second4one { 
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  flex: 7;
+}
+.second4onecard { 
+  flex: 1;
+}
+.second4two { 
+  flex: 3;
+}
+.second4twocard { 
+  width: 100%;
+  height: 100%;
 }

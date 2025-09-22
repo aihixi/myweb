@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import "./App.css";
 import NewAnchor from "./components/newanchor/NewAnchor";
+import petal from "./assets/image/petal.png";
 
 function App() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -16,7 +17,7 @@ function App() {
     const petalArray: Petal[] = [];
 
     const petalImg = new Image();
-    petalImg.src = "https://djjjk9bjm164h.cloudfront.net/petal.png";
+    petalImg.src = petal;
 
     petalImg.onload = () => {
       for (let i = 0; i < TOTAL; i++) {
