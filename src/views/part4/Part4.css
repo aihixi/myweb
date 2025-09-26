@@ -1,17 +1,20 @@
 .part4 {
-  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .projects {
   display: flex;
-  flex-direction: row;
+  width: 100%;
   row-gap: 20px;
   column-gap: 20px;
+  padding: 64px;
+  /* 添加右边距的明确设置 */
+  box-sizing: border-box;
 }
 
 .part4card1 { 
-  width: 15%;
+  width: 234px;
 }

@@ -1,5 +1,4 @@
 .part5 {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,20 +26,16 @@
 
 /* 🌟 公共 Card hover 效果 */
 .part5allcard {
-  transition: opacity .4s ease-in-out;
+  /* transition: opacity .4s ease-in-out; */
   z-index: 0;
   pointer-events: auto;
   font-size: 32px;
   font-weight: bold;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center; /* 垂直居中 */
+  /* align-items: flex-start;  水平左对齐 */
   background: linear-gradient(135deg, #fc00ff , #00dbde);
-}
-
-/* 🌟 统一控制，所有卡片联动 */
-.cardgroup:hover .part5allcard:not(:hover) {
-  /* opacity: .7; */
 }
 
 /* ---------------- 每个卡片的尺寸和渐变背景 ---------------- */
@@ -65,6 +60,7 @@
   width: 100%;
   height: 100%;
   font-size: 24px;
+  align-items: flex-start;
 }
 
 .second2 { 
@@ -113,4 +109,21 @@
 .second4twocard { 
   width: 100%;
   height: 100%;
+}
+
+.text {
+  position: absolute;
+  /* left: 0;
+  top: 0; */
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.4s ease;
+}
+
+.visibleText {
+  opacity: 1;
+}
+
+.hiddenText {
+  opacity: 0;
 }

@@ -9,7 +9,7 @@ import './Part2.css';
 const Part2: React.FC = () => {
 
   return (
-    <div style={{height: '100%', paddingTop: '64px'}}>
+    <div style={{height: '100%'}}>
       <div className="part2">
         <ScrollFadeIn direction='left'>
           <div

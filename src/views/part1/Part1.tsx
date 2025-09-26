@@ -7,7 +7,7 @@ import ScrollFadeIn from '../../components/myanimation/ScrollFadeIn/ScrollFadeIn
 
 const Part1: React.FC = () => {
     return (
-        <div style={{height: '100%', paddingTop: '64px'}}>
+        <div style={{height: '100%'}}>
             <div className='part1'>
                 <div
                     className='part1leftcard'

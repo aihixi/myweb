@@ -3,7 +3,17 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
   justify-content: center;
-  padding: 20px;
+  padding: 64px;
+}
+
+@media (max-width: 768px) {
+  .part3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 90%;
+    padding: 20px;
+    row-gap: 20px;
+  }
 }
 
 .part3tcard1 { 

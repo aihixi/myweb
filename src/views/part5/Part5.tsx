@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Part5.css';
 
 import VanillaTilt from 'vanilla-tilt'
@@ -43,77 +43,118 @@ const Part5: React.FC = () => {
     });
   }, []);
 
-  return (
-    <div style={{ height: '100%', paddingTop: '64px' }}>
-  <div className="part5">
-    <div style={{ width: '100vw' }}>
-      <h1>About The Web</h1>
-    </div>
-    <div className="cardgroup">
-      {/* 第一行 */}
-      <div className="part5firstrow">
-        <div className="first1 part5allcard">
-          Profile Web
-        </div>
-        <div className="first2 part5allcard">
-          React + Vite + TypeScript
-        </div>
-        <div className="first3 part5allcard">
-          Ant Design，Framer Motion，Vanilla-tilt
-        </div>
-      </div>
+  const [hover, setHover] = useState(false);
+  const [click, setClick] = useState(false);
 
-      {/* 第二行 */}
-      <div className="part5secondrow">
-        <div className="second1">
-          <div className="second1card part5allcard">
-            myweb/
-            ├── src/                
-            │   ├── components/     
-            │   │   ├── contact/    
-            │   │   ├── myanimation/
-            │   │   ├── mytext/     
-            │   │   └── newanchor/  
-            │   ├── views/          
-            │   │   ├── part1/      
-            │   │   ├── part2/      
-            │   │   ├── part3/      
-            │   │   ├── part4/      
-            │   │   ├── part5/      
-            │   │   └── part6/      
-            │   ├── assets/         
-            │   ├── App.tsx         
-            │   ├── main.tsx        
-            │   └── ...
-            ├── package.json        
-            └── ...
-          </div>
+
+  const [poem, setPoem] = useState('');
+  const [from, setFrom] = useState('');
+
+  async function getPoem(): Promise<void> {
+    try {
+      const res = await fetch('https://v1.jinrishici.com/all.json')
+      const data = await res.json()
+      setPoem(data.content)
+      setFrom(`—— ${data.author}《${data.origin}》`)
+    } catch {
+      setPoem('加载失败，请稍后重试')
+      setFrom('')
+    }
+  }
+
+  return (
+    <div style={{ height: '100%' }}>
+      <div className="part5">
+        <div style={{ width: '100vw' }}>
+          <h1>About The Web</h1>
         </div>
-        <div className="second2">
-          <div className="second2card part5allcard">
+        <div className="cardgroup">
+          {/* 第一行 */}
+          <div className="part5firstrow">
+            <div className="first1 part5allcard">
+              Profile Web
+            </div>
+            <div className="first2 part5allcard">
+              React + Vite + TypeScript
+            </div>
+            <div className="first3 part5allcard">
+              Ant Design，Framer Motion，Vanilla-tilt
+            </div>
           </div>
-          <div className="second2card part5allcard">
-          </div>
-        </div>
-        <div className="second3">
-          <div className="second3card part5allcard"></div>
-          <div className="second3card part5allcard"></div>
-          <div className="second3card part5allcard"></div>
-          <div className="second3card part5allcard"></div>
-        </div>
-        <div className="second4">
-          <div className="second4one">
-            <div className="second4onecard part5allcard"></div>
-            <div className="second4onecard part5allcard"></div>
-          </div>
-          <div className="second4two">
-            <div className="second4twocard part5allcard"></div>
+      
+          {/* 第二行 */}
+          <div className="part5secondrow">
+            <div className="second1">
+              <div className="second1card part5allcard">
+              <div>myweb</div>   
+              <div>├── src</div>                     
+              <div>│   ├── components (contact, myanimation, mytext, newanchor)</div> 
+              <div>│   ├── views (part1, part2, part3, part4, part5, part6)</div>
+              <div>│   ├── assets</div>
+              <div>│   ├── App.tsx</div>
+              <div>│   └── main.tsx</div>
+              <div>└── package.json</div>
+              </div>
+            </div>
+            <div className="second2">
+              <div
+                className="second2card part5allcard"
+                onClick={() => {
+                  getPoem();
+                  setClick(true);
+                }}
+              >
+                <span className={`text ${click ? "hiddenText" : "visibleText"}`}>
+                  诗词
+                </span>
+                <span className={`text ${click ? "visibleText" : "hiddenText"}`}>
+                  {poem}
+                  <br />
+                  {from}
+                </span>
+              </div>
+              <div className="second2card part5allcard">
+                模块化架构
+              </div>
+            </div>
+            <div className="second3">
+              <div
+                className="second3card part5allcard"
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}
+              >
+                <span className={`text ${hover ? "hiddenText" : "visibleText"}`}>
+                  花瓣下落动画
+                </span>
+                <span className={`text ${hover ? "visibleText" : "hiddenText"}`}>
+                  美丽而优雅
+                </span>
+              </div>
+              <div className="second3card part5allcard">
+                导航栏动画
+              </div>
+              <div className="second3card part5allcard">
+                PC卡片动画
+              </div>
+              <div className="second3card part5allcard">
+                卡片群动画
+              </div>
+            </div>
+            <div className="second4">
+              <div className="second4one">
+                <div className="second4onecard part5allcard"></div>
+                <div className="second4onecard part5allcard"></div>
+              </div>
+              <div className="second4two">
+                <div className="second4twocard part5allcard">
+                  web：aihixi
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
   );
 };

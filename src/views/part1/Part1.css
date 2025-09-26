@@ -7,6 +7,16 @@
     padding: 20px;
 }
 
+@media (max-width: 768px) {
+    .part1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        width: 90%;
+        padding: 20px;
+        row-gap: 20px;
+    }
+}
+
 .part1leftcard {
     background-color: transparent;
     display: flex;

@@ -10,10 +10,9 @@ const Part4: React.FC = () => {
   const { Meta } = Card;
 
     return (
-      <div style={{height: '100%', paddingTop: '64px'}}>
-        <div className='part4'>
-          <div> 
-            <div>
+      <div style={{height: '100%'}}>
+        <div className='part4'> 
+            <div style={{ width: '100vw' }}>
               <h1>What I Have Done</h1>
             </div>
             <div className='projects'>
@@ -35,7 +34,6 @@ const Part4: React.FC = () => {
               </Card>
             </div>
           </div>
-        </div>
       </div>
     );
 };

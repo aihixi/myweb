@@ -104,52 +104,52 @@ const Mypc: React.FC = () => {
           <div className="myPCkeyboard" /> 
         </div>
       </div>
-        <div className='scrollcontainer'>
-          <motion.h1
-            animate={{ rotate: [start1, end1]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >H</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start2, end2]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >E</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start3, end3]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >L</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start4, end4]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >L</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start5, end5]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >O</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start6, end6]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >,</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start7, end7]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >W</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start8, end8]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >O</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start9, end9]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >R</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start10, end10]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >L</motion.h1>
-          <motion.h1
-            animate={{ rotate: [start11, end11]  }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          >D</motion.h1>
-        </div>
+      <div className='scrollcontainer'>
+        <motion.h1
+          animate={{ rotate: [start1, end1]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >H</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start2, end2]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >E</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start3, end3]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >L</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start4, end4]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >L</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start5, end5]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >O</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start6, end6]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >,</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start7, end7]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >W</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start8, end8]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >O</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start9, end9]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >R</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start10, end10]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >L</motion.h1>
+        <motion.h1
+          animate={{ rotate: [start11, end11]  }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+        >D</motion.h1>
+      </div>
     </Card>
   );
 };

@@ -105,9 +105,14 @@
 .scrollcontainer {
   color: transparent;
   display: flex;
+  align-items: flex-end;
   width: 100%;
   justify-content: right;
-  flex-direction: row  ;
+  flex-direction: row;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 30px;
+  margin-right: 20px;
 }
 
 .myPCcard:hover .scrollcontainer { 

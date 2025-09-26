@@ -10,7 +10,7 @@ import ScrollFadeIn from '../../components/myanimation/ScrollFadeIn/ScrollFadeIn
 const Part3: React.FC = () => { 
 
     return (
-      <div style={{height: '100%', paddingTop: '64px'}}>
+      <div style={{height: '100%'}}>
         <div className='part3'> 
           <Card
             className='part3tcard1'
@@ -18,12 +18,17 @@ const Part3: React.FC = () => {
             variant="borderless"
           > 
             <div>
-              <h1 style={{
-                    textAlign: 'left', 
-                    marginLeft: '32px',
-                    color: 'white'
-                }}>School
-            </h1>
+              <div style={{
+                fontSize: '32px', 
+                fontWeight: '700', 
+                margin: '10px',
+                textAlign: 'left', 
+                marginLeft: '32px',
+                color: 'white'
+              }}
+              >
+                School
+              </div>
               <div className='educationimg'> 
                 <img src={TGlogo} alt="TGlogo" style={{  width: '50%', height: '50%' }} />
               </div>
