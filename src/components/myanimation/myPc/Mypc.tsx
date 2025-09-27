@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { Card } from 'antd';
 import './Mypc.css'
 
 import { FaLightbulb } from "react-icons/fa";
@@ -78,31 +77,29 @@ const Mypc: React.FC = () => {
   const start11 = end11 + 360;
 
   return (
-    <Card className='myPCcard'
-      variant='borderless' 
+    <div className='myPCcard'
+      // variant='borderless' 
     >
-      <div style={{width: '100%'}}>
-        <div className="myPC">
-          <div className="mylightbulb" > 
-            <div className="mylightbulbicon" >
+      <div className="myPC">
+        <div className="mylightbulb" > 
+          <div className="mylightbulbicon" >
             <FaLightbulb size={64} />
-            </div>
           </div>
-          <div className="myPCscreen" >
-            <div className='myscreencontent'>
-              <div className='firstline' />
-              <div className='secondline' />
-              <div className='thirdline' />
-              <div className='fourthline' />
-              <div className='fifthline' />
-              <div className='sixthline' />
-              <div className='seventhline' />
-              <div className='eighthline' />
-              <div className='ninthline'/>
-            </div>
-          </div>
-          <div className="myPCkeyboard" /> 
         </div>
+        <div className="myPCscreen" >
+          <div className='myscreencontent'>
+            <div className='firstline' />
+            <div className='secondline' />
+            <div className='thirdline' />
+            <div className='fourthline' />
+            <div className='fifthline' />
+            <div className='sixthline' />
+            <div className='seventhline' />
+            <div className='eighthline' />
+            <div className='ninthline'/>
+          </div>
+        </div>
+        <div className="myPCkeyboard" /> 
       </div>
       <div className='scrollcontainer'>
         <motion.h1
@@ -150,7 +147,7 @@ const Mypc: React.FC = () => {
           transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
         >D</motion.h1>
       </div>
-    </Card>
+    </div>
   );
 };
 

@@ -27,12 +27,12 @@ const Part6: React.FC = () => {
                 <input type="text" placeholder='Message' style={{width: '100%', height: '24px', background: 'transparent', border: 'none', outline: 'none'}} />
               </div>
               <div>
-                <Button type="primary" className='button'>Send</Button>
+                <Button type="primary" className='sendbutton'>Send</Button>
               </div>
               <hr style={{width: '100%'}} />
             </div>
             <div className='einfo'>
-              <div>E-mail</div>
+              <div>E-mail:</div>
               <div>12345678@mail.com</div>
             </div>
             <div className='econtact'>

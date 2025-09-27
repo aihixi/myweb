@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.comment-card::before {
+/* .comment-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -19,7 +19,7 @@
   width: 4px;
   height: 100%;
   background: linear-gradient(to bottom, #4f46e5, #7c3aed);
-}
+} */
 
 .comment-card:hover {
   transform: translateY(-3px);
@@ -55,7 +55,7 @@
   font-size: 12px;
   color: #64748b;
   background-color: #f1f5f9;
-  padding: 2px 8px;
+  /* padding: 2px 8px; */
   border-radius: 20px;
 }
 
@@ -63,7 +63,7 @@
   font-size: 14px;
   color: #334155;
   line-height: 1.6;
-  padding-left: 16px;
+  /* padding-left: 16px; */
   position: relative;
 }
 

@@ -14,16 +14,6 @@
   padding: 20px 100px 20px 100px; 
 }
 
-@media (max-width: 768px) {
-  .part6body {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    width: 90%;
-    padding: 20px;
-    row-gap: 20px;
-  }
-}
-
 .part6bodyleft { 
   display: flex;
   flex-direction: column;
@@ -41,6 +31,23 @@
   box-sizing: border-box;
   background-color: transparent;
   backdrop-filter: blur(10px);
+}
+
+.sendbutton { 
+  width: 100%;
+  border: 0;
+}
+
+.sendbutton:focus { 
+  outline: none;
+}
+
+.einfo { 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 1.5rem;
+  padding: 32px;
 }
 
 .part6bodyright { 
@@ -63,8 +70,23 @@
   width: 100%;
   max-height: 500px;
   overflow-y: auto;
-  padding-right: 10px;
+  overflow-x: hidden;
+  padding: 8px;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .part6body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 90%;
+    padding: 20px;
+    row-gap: 20px;
+  }
+  .commends {
+    min-width: 0;
+    /* max-width: 300px; */
+  }
 }
 
 .commends > * {
