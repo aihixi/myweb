@@ -19,7 +19,7 @@ const Part3: React.FC = () => {
           > 
             <div>
               <div style={{
-                fontSize: '32px', 
+                fontSize: '3rem', 
                 fontWeight: '700', 
                 margin: '10px',
                 textAlign: 'left', 
@@ -35,7 +35,7 @@ const Part3: React.FC = () => {
               <div className='educationontent'>
                 <div>
                   <div>
-                    <div style={{ fontSize: '32px', fontWeight: '500', margin: '10px' }}>
+                    <div style={{ fontSize: '2rem', fontWeight: '500', margin: '10px' }}>
                       教育部、国家国防科技工业局和天津市共建的“双一流”重点建设高校
                     </div>
                   </div>

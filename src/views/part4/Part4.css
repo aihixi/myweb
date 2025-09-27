@@ -18,3 +18,9 @@
 .part4card1 { 
   width: 234px;
 }
+
+@media (max-width: 768px) { 
+  .part4card1 { 
+    width: 150px;
+  }
+}

@@ -29,7 +29,7 @@
   /* transition: opacity .4s ease-in-out; */
   z-index: 0;
   pointer-events: auto;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   display: flex;
   flex-direction: column;

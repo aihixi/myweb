@@ -86,14 +86,14 @@ const Part5: React.FC = () => {
           <div className="part5secondrow">
             <div className="second1">
               <div className="second1card part5allcard">
-              <div>myweb</div>   
-              <div>├── src</div>                     
-              <div>│   ├── components (contact, myanimation, mytext, newanchor)</div> 
-              <div>│   ├── views (part1, part2, part3, part4, part5, part6)</div>
-              <div>│   ├── assets</div>
-              <div>│   ├── App.tsx</div>
-              <div>│   └── main.tsx</div>
-              <div>└── package.json</div>
+              <div style={{fontSize: '1.5rem'}}>myweb</div>   
+              <div style={{fontSize: '1.5rem'}}>├── src</div>                     
+              <div style={{fontSize: '1.5rem'}}>│   ├── components (contact, myanimation, mytext, newanchor)</div> 
+              <div style={{fontSize: '1.5rem'}}>│   ├── views (part1, part2, part3, part4, part5, part6)</div>
+              <div style={{fontSize: '1.5rem'}}>│   ├── assets</div>
+              <div style={{fontSize: '1.5rem'}}>│   ├── App.tsx</div>
+              <div style={{fontSize: '1.5rem'}}>│   └── main.tsx</div>
+              <div style={{fontSize: '1.5rem'}}>└── package.json</div>
               </div>
             </div>
             <div className="second2">
