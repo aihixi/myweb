@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
+import type { MenuProps } from 'antd';
+import { Menu } from 'antd';
+
 import "./NewAnchor.css";
 
 import Part1 from '../../views/part1/Part1';
@@ -9,6 +14,8 @@ import Part4 from '../../views/part4/Part4';
 import Part5 from '../../views/part5/Part5';
 import Part6 from '../../views/part6/Part6';
 
+import { RiMenuFill } from "react-icons/ri";
+
 const sections = [
   { id: "section1", label: "Section 1" },
   { id: "section2", label: "Section 2" },
@@ -16,6 +23,24 @@ const sections = [
   { id: "section4", label: "Section 4" },
   { id: "section5", label: "Section 5" },
   { id: "section6", label: "Section 6" }
+];
+
+type MenuItem = Required<MenuProps>['items'][number];
+
+const items: MenuItem[] = [
+  {
+    key: 'sub1',
+    label: '导航',
+    icon: <RiMenuFill size={16} />,
+    children: [
+      { key: "section1", label: "Section 1" },
+      { key: "section2", label: "Section 2" },
+      { key: "section3", label: "Section 3" },
+      { key: "section4", label: "Section 4" },
+      { key: "section5", label: "Section 5" },
+      { key: "section6", label: "Section 6" }
+    ],
+  },
 ];
 
 const NewAchor: React.FC = () => {
@@ -65,7 +90,45 @@ const NewAchor: React.FC = () => {
     },
 
   };
-  
+
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const [current, setCurrent] = useState('mail');
+
+  const onClick: MenuProps['onClick'] = (e) => {
+    console.log('click ', e);
+    setCurrent(e.key);
+
+    switch (e.key) {
+      case 'section1':
+        console.log('你点击了 Option 1');
+        document.getElementById('section1')?.scrollIntoView({ behavior: 'smooth' });
+        // 执行 Option 1 的逻辑
+        break;
+      case 'section2':
+        console.log('你点击了 Option 2');
+        document.getElementById('section2')?.scrollIntoView({ behavior: 'smooth' });
+        // 执行 Option 2 的逻辑
+        break;
+      case 'section3':
+        console.log('你点击了 Option 3');
+        document.getElementById('section3')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'section4':
+        console.log('你点击了 Option 4');
+        document.getElementById('section4')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'section5':
+        console.log('你点击了 Option 5');
+        document.getElementById('section5')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+      case 'section6':
+        console.log('你点击了 Option 6');
+        document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
+        break;
+    }
+  };
+
 
   return (
     <div 
@@ -78,15 +141,27 @@ const NewAchor: React.FC = () => {
         animate={inView ? "visible" : "hidden"} 
         variants={variants}
       >
-        {sections.map((s) => (
-          <a
-            key={s.id}
-            href={`#${s.id}`}
-            className={activeId === s.id ? "nav-link active" : "nav-link"}
-          >
-            {s.label}
-          </a>
-        ))}
+        {isMobile ? (
+          <Menu
+            onClick={onClick}
+            style={{ backgroundColor: 'transparent' }}
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            selectedKeys={[current]}
+            mode="horizontal"
+            items={items}
+          />
+        ) : (
+          sections.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className={activeId === s.id ? "nav-link active" : "nav-link"}
+            >
+              {s.label}
+            </a>
+          ))
+        )}
       </motion.nav>
 
       {/* 页面内容 */}

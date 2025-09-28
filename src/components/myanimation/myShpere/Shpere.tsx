@@ -48,7 +48,7 @@ const Sphere: React.FC = () => {
             <img src={Glasses} alt="Glasses" className="glasses" />
           </div>
           <div className="part2ballshadow" ref={ballShadowRef}/>
-          <div style={{ width: '450px', display: 'flex', justifyContent: 'right' }}>
+          <div style={{ width: '400px', display: 'flex', justifyContent: 'right' }}>
             <div className='mymouse' ref={mymouseRef} >
               <CiDesktopMouse2 size={64} />
             </div>

@@ -20,6 +20,11 @@
   z-index: 1000;
 }
 
+.nav-options {
+  background-color: antiquewhite;
+  width: 100%;
+}
+
 /* 链接样式 */
 .nav-link {
   color: black;
