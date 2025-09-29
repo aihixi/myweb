@@ -20,22 +20,6 @@
   z-index: 1000;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    height: 50px;
-    width: calc(100% - 32px);
-    padding-top: 8px;
-    padding-left: 16px;
-    padding-right: 16px;
-    align-items: start;
-  }
-}
-
-.nav-options {
-  background-color: transparent;
-  width: 90px;
-}
-
 .my-submenu-popup {
   background: transparent !important;
   border-radius: 10px;
@@ -53,9 +37,25 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    width: calc(100% - 32px);
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: start;
+  }
+  .nav-link {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+}
+
 .mobile-nav-links {
   display: flex;
   flex-direction: column; /* 垂直排列 */
+  width: 100%;
   margin-top: 8px;
   gap: 16px;             /* 每个链接之间的间距 */
 }

@@ -17,10 +17,10 @@ const Part6: React.FC = () => {
         <div className='part6body'>
           <div className='part6bodyleft'>
             <div className='textinput'>
-              <h2>Do a comment</h2>
+              <h2 style={{fontSize: '24px'}}>Do a comment</h2>
               <div style={{display: 'flex', columnGap: '16px', background: 'transparent'}}>
                 <IoPersonCircleSharp size={32} />
-                <input type="text" placeholder='Name' style={{width: '100%', height: '32px', background: 'transparent', border: 'none', outline: 'none'}} />
+                <input placeholder='Name' style={{width: '100%', height: '32px', background: 'transparent', border: 'none', outline: 'none', fontSize: '16px', fontFamily: 'inherit',}} />
               </div>
               <div style={{display: 'flex', columnGap: '16px', background: 'transparent'}}>
                 <TiDocumentText size={32} />
@@ -33,7 +33,10 @@ const Part6: React.FC = () => {
                     border: 'none',
                     outline: 'none',
                     resize: 'none',   // 禁止拖拽缩放
-                    fontSize: '16px'  // 可选：让字体更舒服
+                    fontSize: '16px', // 改为使用em单位以匹配全局字体设置
+                    fontFamily: 'inherit', // 继承字体族
+                    paddingTop: '8px',
+                    paddingBottom: '8px'
                   }}
                 />
               </div>
@@ -48,7 +51,7 @@ const Part6: React.FC = () => {
           </div>
           <div className='part6bodyright'>
             <div>
-              <h2>Commends</h2>
+              <h2 style={{fontSize: '24px'}}>Commends</h2>
             </div>
             <div className='commends'>
               <CommendCard />

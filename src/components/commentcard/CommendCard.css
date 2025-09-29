@@ -1,6 +1,7 @@
 .comment-card {
   width: 90%;
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  background: transparent;
+  backdrop-filter: blur(999px);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
@@ -36,7 +37,7 @@
 .comment-author {
   font-weight: 600;
   font-size: 16px;
-  color: #1e293b;
+  /* color: #1e293b; */
   display: flex;
   align-items: center;
 }
@@ -54,14 +55,14 @@
 .comment-time {
   font-size: 12px;
   color: #64748b;
-  background-color: #f1f5f9;
+  background-color: transparent;
   /* padding: 2px 8px; */
   border-radius: 20px;
 }
 
 .comment-content {
   font-size: 14px;
-  color: #334155;
+  /* color: #334155; */
   line-height: 1.6;
   /* padding-left: 16px; */
   position: relative;

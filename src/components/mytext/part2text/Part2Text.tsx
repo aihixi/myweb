@@ -1,3 +1,5 @@
+import { useMediaQuery } from "react-responsive";
+
 import { BiSolidFileHtml } from "react-icons/bi";
 import { BiSolidFileCss } from "react-icons/bi";
 import { BiLogoJavascript } from "react-icons/bi";
@@ -12,6 +14,10 @@ import { SiMysql } from "react-icons/si";
 
 import './Part2Text.css'
 const Part2Text: React.FC = () => {
+    
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const iconsize = isMobile ? 48 : 64
+
     return (
       <div>
         <h1 style={{
@@ -34,17 +40,17 @@ const Part2Text: React.FC = () => {
             </li>
         </ul>
         <div style={{textAlign: 'left',paddingLeft: '24px'}}>
-          <BiSolidFileHtml className='myicon' size={64} />
-          <BiSolidFileCss className='myicon' size={64} />
-          <FaNpm className='myicon' size={64} />
-          <BiLogoJavascript className='myicon' size={64} />
-          <BiLogoTypescript className='myicon' size={64} />
-          <FaReact className='myicon' size={64} />
-          <IoLogoVue className='myicon' size={64} />
-          <IoLogoElectron className='myicon' size={64} />
-          <SiCplusplus className='myicon' size={64} />
-          <FaPython className='myicon' size={64} />
-          <SiMysql className='myicon' size={64} />
+          <BiSolidFileHtml className='myicon' size={iconsize} />
+          <BiSolidFileCss className='myicon' size={iconsize} />
+          <FaNpm className='myicon' size={iconsize} />
+          <BiLogoJavascript className='myicon' size={iconsize} />
+          <BiLogoTypescript className='myicon' size={iconsize} />
+          <FaReact className='myicon' size={iconsize} />
+          <IoLogoVue className='myicon' size={iconsize} />
+          <IoLogoElectron className='myicon' size={iconsize} />
+          <SiCplusplus className='myicon' size={iconsize} />
+          <FaPython className='myicon' size={iconsize} />
+          <SiMysql className='myicon' size={iconsize} />
         </div>
       </div>
     )

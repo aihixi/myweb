@@ -115,7 +115,7 @@ const NewAchor: React.FC = () => {
             expandIcon={({ isActive }) => (
               <CaretRightOutlined rotate={isActive ? 90 : 0} />
             )}
-            style={{ backgroundColor: 'transparent', width: '100px' }}
+            style={{ backgroundColor: 'transparent', width: '110px' }}
           >
             <Collapse.Panel header="导航" key="nav">
               <div className="mobile-nav-links">

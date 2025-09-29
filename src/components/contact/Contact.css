@@ -1,9 +1,15 @@
 .part2tag {
-    display: flex;
-    width: 100%;
-    min-width: 300px;
-    max-width: 400px;
-    height: 100px;
+  display: flex;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  aspect-ratio: 32 / 7;
+}
+
+@media (max-width: 768px) { 
+  .part2tag {
+    width: 300px;
+  }
 }
 
 .part2tagstyle {

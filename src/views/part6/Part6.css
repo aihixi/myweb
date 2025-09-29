@@ -18,8 +18,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
 }
 
 .textinput { 
@@ -29,13 +28,36 @@
   row-gap: 16px;
   padding: 32px;
   box-sizing: border-box;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    135deg,
+    rgba(252, 0, 255, 0.08),   /* 紫色 30% 透明 */
+    rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
+  );
+  backdrop-filter: blur(999px);
+  border-radius: 12px;
 }
 
 .sendbutton { 
   width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(252, 0, 255, 0.08),   /* 紫色 30% 透明 */
+    rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
+  );
+  color: CanvasText;
   border: 0;
+}
+
+.sendbutton:hover { 
+  background: linear-gradient(
+    135deg,
+    rgba(252, 0, 255, 0.08),   /* 紫色 30% 透明 */
+    rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
+  ) !important;
+  color: CanvasText !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: 
+    translate(0, -3px);
 }
 
 .sendbutton:focus { 
@@ -55,8 +77,12 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    135deg,
+    rgba(252, 0, 255, 0.08),   /* 紫色 30% 透明 */
+    rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
+  );
+  backdrop-filter: blur(999px);
   border-radius: 12px;
   padding: 20px;
   box-sizing: border-box;
@@ -116,4 +142,11 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(252, 0, 255, 0.08),   /* 紫色 30% 透明 */
+    rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
+  );
+  backdrop-filter: blur(999px);
+  border-radius: 12px;
 }
