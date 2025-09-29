@@ -20,10 +20,30 @@
   z-index: 1000;
 }
 
-.nav-options {
-  background-color: antiquewhite;
-  width: 100%;
+@media (max-width: 768px) {
+  .navbar {
+    height: 50px;
+    width: calc(100% - 32px);
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: start;
+  }
 }
+
+.nav-options {
+  background-color: transparent;
+  width: 90px;
+}
+
+.my-submenu-popup {
+  background: transparent !important;
+  border-radius: 10px;
+  min-width: 200px;   /* 控制弹出菜单的最小宽度 */
+  max-width: 260px;   /* 限制最大宽度，避免太宽 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
 
 /* 链接样式 */
 .nav-link {
@@ -31,6 +51,13 @@
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  margin-top: 8px;
+  gap: 16px;             /* 每个链接之间的间距 */
 }
 
 .nav-link.active {

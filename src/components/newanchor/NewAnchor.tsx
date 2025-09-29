@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
-
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import type { MenuProps } from 'antd';
-import { Menu } from 'antd';
+import { Collapse } from "antd";
+import { CaretRightOutlined } from "@ant-design/icons";
 
 import "./NewAnchor.css";
 
-import Part1 from '../../views/part1/Part1';
-import Part2 from '../../views/part2/Part2';
-import Part3 from '../../views/part3/Part3';
-import Part4 from '../../views/part4/Part4';
-import Part5 from '../../views/part5/Part5';
-import Part6 from '../../views/part6/Part6';
-
-import { RiMenuFill } from "react-icons/ri";
+import Part1 from "../../views/part1/Part1";
+import Part2 from "../../views/part2/Part2";
+import Part3 from "../../views/part3/Part3";
+import Part4 from "../../views/part4/Part4";
+import Part5 from "../../views/part5/Part5";
+import Part6 from "../../views/part6/Part6";
 
 const sections = [
   { id: "section1", label: "Section 1" },
@@ -22,30 +19,16 @@ const sections = [
   { id: "section3", label: "Section 3" },
   { id: "section4", label: "Section 4" },
   { id: "section5", label: "Section 5" },
-  { id: "section6", label: "Section 6" }
-];
-
-type MenuItem = Required<MenuProps>['items'][number];
-
-const items: MenuItem[] = [
-  {
-    key: 'sub1',
-    label: '导航',
-    icon: <RiMenuFill size={16} />,
-    children: [
-      { key: "section1", label: "Section 1" },
-      { key: "section2", label: "Section 2" },
-      { key: "section3", label: "Section 3" },
-      { key: "section4", label: "Section 4" },
-      { key: "section5", label: "Section 5" },
-      { key: "section6", label: "Section 6" }
-    ],
-  },
+  { id: "section6", label: "Section 6" },
 ];
 
 const NewAchor: React.FC = () => {
+  
   const [activeId, setActiveId] = useState("");
+    // 滚轮时隐藏/显示 navbar
+  const [inView, setInView] = useState(true);
 
+  // 监听滚动，更新 activeId
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -63,94 +46,100 @@ const NewAchor: React.FC = () => {
       if (el) observer.observe(el);
     });
 
-    return () => observer.disconnect();
+    let startY = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const currentY = e.touches[0].clientY;
+      const deltaY = currentY - startY;
+
+      if (Math.abs(deltaY) > 20) { // 加个阈值，避免误触
+        if (deltaY < 0) {
+          setInView(false); // 上滑（页面向下滚动） -> 隐藏
+        } else {
+          setInView(true);  // 下滑（页面向上滚动） -> 显示
+        }
+      }
+    };
+
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
-
-
-  const [inView, setInView] = useState(true); // 将inView改为状态
 
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     if (event.deltaY > 0) {
-      console.log("向下滚动");
-      setInView(false);
+      setInView(false); // 向下滚动隐藏
     } else if (event.deltaY < 0) {
-      console.log("向上滚动");
-      setInView(true);
+      setInView(true); // 向上滚动显示
     }
   };
 
-  const variants = { 
-    hidden: { 
-      opacity: 0, y: -50 ,
-      transition: { duration: 0.5 }
+  // 动画效果
+  const variants = {
+    hidden: {
+      opacity: 0,
+      y: -50,
+      transition: { duration: 0.5 },
     },
-    visible: { 
-      opacity: 1, y: 0 ,
-      transition: { duration: 0.5 }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
     },
-
   };
 
+  // 判断是否为移动端
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  const [current, setCurrent] = useState('mail');
-
-  const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click ', e);
-    setCurrent(e.key);
-
-    switch (e.key) {
-      case 'section1':
-        console.log('你点击了 Option 1');
-        document.getElementById('section1')?.scrollIntoView({ behavior: 'smooth' });
-        // 执行 Option 1 的逻辑
-        break;
-      case 'section2':
-        console.log('你点击了 Option 2');
-        document.getElementById('section2')?.scrollIntoView({ behavior: 'smooth' });
-        // 执行 Option 2 的逻辑
-        break;
-      case 'section3':
-        console.log('你点击了 Option 3');
-        document.getElementById('section3')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'section4':
-        console.log('你点击了 Option 4');
-        document.getElementById('section4')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'section5':
-        console.log('你点击了 Option 5');
-        document.getElementById('section5')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-      case 'section6':
-        console.log('你点击了 Option 6');
-        document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
-        break;
-    }
-  };
-
-
   return (
-    <div 
-      onWheel={handleWheel}
-    >
+    <div onWheel={handleWheel}>
       {/* 导航栏 */}
       <motion.nav
         className="navbar"
-        initial="visible" 
-        animate={inView ? "visible" : "hidden"} 
+        initial="visible"
+        animate={inView ? "visible" : "hidden"}
         variants={variants}
       >
         {isMobile ? (
-          <Menu
-            onClick={onClick}
-            style={{ backgroundColor: 'transparent' }}
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
-            selectedKeys={[current]}
-            mode="horizontal"
-            items={items}
-          />
+          <Collapse
+            bordered={false}
+            expandIcon={({ isActive }) => (
+              <CaretRightOutlined rotate={isActive ? 90 : 0} />
+            )}
+            style={{ backgroundColor: 'transparent', width: '100px' }}
+          >
+            <Collapse.Panel header="导航" key="nav">
+              <div className="mobile-nav-links">
+                {sections.map((s) => (
+                  <div key={s.id} className="mobile-nav-item">
+                    <a
+                      href={`#${s.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document
+                          .getElementById(s.id)
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className={
+                        'nav-link'
+                      }
+                    >
+                      {s.label}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </Collapse.Panel>
+          </Collapse>
         ) : (
           sections.map((s) => (
             <a
@@ -175,13 +164,13 @@ const NewAchor: React.FC = () => {
         <section id="section3" className="section section3">
           <Part3 />
         </section>
-        <section id="section4" className="section section4"> 
+        <section id="section4" className="section section4">
           <Part4 />
         </section>
-        <section id="section5" className="section section5"> 
+        <section id="section5" className="section section5">
           <Part5 />
         </section>
-        <section id="section6" className="section section6"> 
+        <section id="section6" className="section section6">
           <Part6 />
         </section>
       </div>
