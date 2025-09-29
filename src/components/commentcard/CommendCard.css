@@ -1,7 +1,7 @@
 .comment-card {
   width: 90%;
   background: transparent;
-  backdrop-filter: blur(999px);
+  backdrop-filter: blur(40px);
   border-radius: 12px;
   padding: 20px;
   margin-bottom: 20px;
