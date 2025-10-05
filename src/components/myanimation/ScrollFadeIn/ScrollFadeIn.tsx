@@ -35,7 +35,7 @@ const ScrollFadeIn: React.FC<ScrollFadeInProps> = ({
       initial={{ opacity: 0, ...getInitialOffset() }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       transition={{ duration }}
-      viewport={{ once: true }}
+      viewport={{ once: false }}
     >
       {children}
     </motion.div>

@@ -72,13 +72,16 @@ const Part5: React.FC = () => {
           {/* 第一行 */}
           <div className="part5firstrow">
             <div className="first1 part5allcard">
-              Profile Web
+              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>个人网站</div>
+              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>展示个人作品与技能的在线简历</div>
             </div>
             <div className="first2 part5allcard">
-              React + Vite + TypeScript
+              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>技术栈</div>
+              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>使用 React 18 + Vite 4 + TypeScript 开发，确保代码质量和类型安全</div>
             </div>
             <div className="first3 part5allcard">
-              Ant Design，Framer Motion，Vanilla-tilt
+              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>UI 框架</div>
+              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>采用 Ant Design 组件库，配合 Framer Motion 和 Vanilla-tilt 实现丝滑动画效果</div>
             </div>
           </div>
       
@@ -86,14 +89,15 @@ const Part5: React.FC = () => {
           <div className="part5secondrow">
             <div className="second1">
               <div className="second1card part5allcard">
-              <div style={{fontSize: '1.5rem'}}>myweb</div>   
-              <div style={{fontSize: '1.5rem'}}>├── src</div>                     
-              <div style={{fontSize: '1.5rem'}}>│   ├── components (contact, myanimation, mytext, newanchor)</div> 
-              <div style={{fontSize: '1.5rem'}}>│   ├── views (part1, part2, part3, part4, part5, part6)</div>
-              <div style={{fontSize: '1.5rem'}}>│   ├── assets</div>
-              <div style={{fontSize: '1.5rem'}}>│   ├── App.tsx</div>
-              <div style={{fontSize: '1.5rem'}}>│   └── main.tsx</div>
-              <div style={{fontSize: '1.5rem'}}>└── package.json</div>
+                <div style={{fontSize: '1.8rem', marginBottom: '20px', textAlign: 'center', letterSpacing: '1px'}}>项目结构</div>   
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>myweb</div>   
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>├── src</div>                     
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── components</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── views</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── assets</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── App.tsx</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   └── main.tsx</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>└── package.json</div>
               </div>
             </div>
             <div className="second2">
@@ -104,17 +108,18 @@ const Part5: React.FC = () => {
                   setClick(true);
                 }}
               >
-                <span className={`text ${click ? "hiddenText" : "visibleText"}`}>
-                  诗词
+                <span className={`text ${click ? "hiddenText" : "visibleText"}`} style={{fontSize: '1.6rem', letterSpacing: '2px'}}>
+                  今日诗词
                 </span>
-                <span className={`text ${click ? "visibleText" : "hiddenText"}`}>
+                <span className={`text ${click ? "visibleText" : "hiddenText"}`} style={{fontSize: '1.5rem', padding: '15px', lineHeight: '1.6'}}>
                   {poem}
                   <br />
-                  {from}
+                  <span style={{fontSize: '1rem', marginTop: '8px', fontStyle: 'italic', opacity: '0.85', display: 'block'}}>{from}</span>
                 </span>
               </div>
               <div className="second2card part5allcard">
-                模块化架构
+                <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>模块化架构</div>
+                <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>采用组件化开发，保持代码整洁和可维护性</div>
               </div>
             </div>
             <div className="second3">
@@ -123,31 +128,41 @@ const Part5: React.FC = () => {
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
               >
-                <span className={`text ${hover ? "hiddenText" : "visibleText"}`}>
-                  花瓣下落动画
+                <span className={`text ${hover ? "hiddenText" : "visibleText"}`} style={{fontSize: '1.4rem', letterSpacing: '1px'}}>
+                  樱花特效
                 </span>
-                <span className={`text ${hover ? "visibleText" : "hiddenText"}`}>
-                  美丽而优雅
+                <span className={`text ${hover ? "visibleText" : "hiddenText"}`} style={{fontSize: '1.1rem', lineHeight: '1.4'}}>
+                  浪漫飘落的花瓣动画
                 </span>
               </div>
               <div className="second3card part5allcard">
-                导航栏动画
+                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>智能导航</div>
+                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>平滑滚动导航</div>
               </div>
               <div className="second3card part5allcard">
-                PC卡片动画
+                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>3D效果</div>
+                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>悬浮立体感</div>
               </div>
               <div className="second3card part5allcard">
-                卡片群动画
+                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>视差滚动</div>
+                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>沉浸式体验</div>
               </div>
             </div>
             <div className="second4">
               <div className="second4one">
-                <div className="second4onecard part5allcard"></div>
-                <div className="second4onecard part5allcard"></div>
+                <div className="second4onecard part5allcard">
+                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>响应式</div>
+                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>适配各种屏幕</div>
+                </div>
+                <div className="second4onecard part5allcard">
+                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>性能优化</div>
+                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>快速加载</div>
+                </div>
               </div>
               <div className="second4two">
                 <div className="second4twocard part5allcard">
-                  web：aihixi
+                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>作者：aihixi</div>
+                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.85'}}>2025 © All Rights Reserved</div>
                 </div>
               </div>
             </div>

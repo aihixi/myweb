@@ -127,3 +127,33 @@
 .hiddenText {
   opacity: 0;
 }
+
+/* 响应式设计 */
+@media screen and (max-width: 1200px) {
+  .part5firstrow {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .first1, .first2, .first3 {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .part5secondrow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .second1, .second2, .second3, .second4 {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .second1card {
+    height: auto;
+    padding: 20px 0;
+  }
+
+}
+

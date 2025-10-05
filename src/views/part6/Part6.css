@@ -35,6 +35,12 @@
   );
   backdrop-filter: blur(40px);
   border-radius: 12px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.textinput:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .sendbutton { 
@@ -55,9 +61,9 @@
     rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
   ) !important;
   color: CanvasText !important;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transform: 
-    translate(0, -3px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  /* transform: 
+    translate(0, -3px); */
 }
 
 .sendbutton:focus { 
@@ -86,6 +92,12 @@
   border-radius: 12px;
   padding: 20px;
   box-sizing: border-box;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.part6bodyright:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
 }
 
 .commends {
