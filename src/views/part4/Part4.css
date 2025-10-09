@@ -17,6 +17,15 @@
 
 .part4card1 { 
   width: 234px;
+  overflow: hidden;
+}
+
+.part4img { 
+  transition: transform 0.3s ease;
+}
+
+.part4card1:hover .part4img { 
+  transform: scale(1.1);
 }
 
 @media (max-width: 768px) { 

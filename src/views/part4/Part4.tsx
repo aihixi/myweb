@@ -18,7 +18,7 @@ const Part4: React.FC = () => {
             <div className='projects'>
               <Card
                 hoverable
-                cover={<img alt="Culator" src={Culatorpng} />}
+                cover={<img className='part4img' alt="Culator" src={Culatorpng} />}
                 className='part4card1'
                 onClick={() => {window.open('https://github.com/aihixi/Standardcalculator2')}}
               >
@@ -26,7 +26,7 @@ const Part4: React.FC = () => {
               </Card>
               <Card
                 hoverable
-                cover={<img alt="Profile" src={Profilepng} />}
+                cover={<img className='part4img' alt="Profile" src={Profilepng} />}
                 className='part4card1'
                 onClick={() => {window.open('https://github.com/https://github.com/aihixi/myweb/Standardcalculator2')}}
               >
