@@ -66,10 +66,6 @@
     translate(0, -3px); */
 }
 
-.sendbutton:focus { 
-  outline: none;
-}
-
 .einfo { 
   display: flex;
   flex-direction: column;

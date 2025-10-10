@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import { Collapse } from "antd";
+import { Button, Collapse } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 
 import "./NewAnchor.css";
@@ -12,6 +12,7 @@ import Part3 from "../../views/part3/Part3";
 import Part4 from "../../views/part4/Part4";
 import Part5 from "../../views/part5/Part5";
 import Part6 from "../../views/part6/Part6";
+import Part7 from "../../views/part7/Part7";
 
 const sections = [
   { id: "section1", label: "Section 1" },
@@ -22,13 +23,14 @@ const sections = [
   { id: "section6", label: "Section 6" },
 ];
 
-const NewAchor: React.FC = () => {
-  
+const NewAnchor: React.FC = () => {
   const [activeId, setActiveId] = useState("");
-    // 滚轮时隐藏/显示 navbar
   const [inView, setInView] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  // 监听滚动，更新 activeId
+  const startY = useRef(0); // ✅ 用 useRef 保存 touch 起点
+
+  // IntersectionObserver
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -46,22 +48,24 @@ const NewAchor: React.FC = () => {
       if (el) observer.observe(el);
     });
 
-    let startY = 0;
+    return () => observer.disconnect();
+  }, []);
 
+  // 滚动 & 触摸控制 inView
+  useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
-      startY = e.touches[0].clientY;
+      if (open) return;
+      startY.current = e.touches[0].clientY;
     };
 
     const handleTouchMove = (e: TouchEvent) => {
+      if (open) return;
       const currentY = e.touches[0].clientY;
-      const deltaY = currentY - startY;
+      const deltaY = currentY - startY.current;
 
-      if (Math.abs(deltaY) > 20) { // 加个阈值，避免误触
-        if (deltaY < 0) {
-          setInView(false); // 上滑（页面向下滚动） -> 隐藏
-        } else {
-          setInView(true);  // 下滑（页面向上滚动） -> 显示
-        }
+      if (Math.abs(deltaY) > 20) {
+        if (deltaY < 0) setInView(false); // 上滑隐藏
+        else setInView(true); // 下滑显示
       }
     };
 
@@ -69,18 +73,16 @@ const NewAchor: React.FC = () => {
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
     };
-  }, []);
+  }, [open]); // ✅ 注意加 open 依赖
 
+  // 滚轮事件
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
-    if (event.deltaY > 0) {
-      setInView(false); // 向下滚动隐藏
-    } else if (event.deltaY < 0) {
-      setInView(true); // 向上滚动显示
-    }
+    if (open) return;
+    if (event.deltaY > 0) setInView(false);
+    else if (event.deltaY < 0) setInView(true);
   };
 
   // 动画效果
@@ -97,7 +99,6 @@ const NewAchor: React.FC = () => {
     },
   };
 
-  // 判断是否为移动端
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   return (
@@ -109,48 +110,51 @@ const NewAchor: React.FC = () => {
         animate={inView ? "visible" : "hidden"}
         variants={variants}
       >
-        {isMobile ? (
-          <Collapse
-            bordered={false}
-            expandIcon={({ isActive }) => (
-              <CaretRightOutlined rotate={isActive ? 90 : 0} />
-            )}
-            style={{ backgroundColor: 'transparent', width: '110px' }}
-          >
-            <Collapse.Panel header="导航" key="nav">
-              <div className="mobile-nav-links">
-                {sections.map((s) => (
-                  <div key={s.id} className="mobile-nav-item">
-                    <a
-                      href={`#${s.id}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        document
-                          .getElementById(s.id)
-                          ?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className={
-                        'nav-link'
-                      }
-                    >
-                      {s.label}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            </Collapse.Panel>
-          </Collapse>
-        ) : (
-          sections.map((s) => (
-            <a
-              key={s.id}
-              href={`#${s.id}`}
-              className={activeId === s.id ? "nav-link active" : "nav-link"}
+        <div className="drawert">
+          <Button type="primary" onClick={() => setOpen(true)} />
+        </div>
+        <div className="navcontent">
+          {isMobile ? (
+            <Collapse
+              bordered={false}
+              expandIcon={({ isActive }) => (
+                <CaretRightOutlined rotate={isActive ? 90 : 0} />
+              )}
+              style={{ backgroundColor: "transparent", width: "110px" }}
             >
-              {s.label}
-            </a>
-          ))
-        )}
+              <Collapse.Panel header="导航" key="nav">
+                <div className="mobile-nav-links">
+                  {sections.map((s) => (
+                    <div key={s.id} className="mobile-nav-item">
+                      <a
+                        href={`#${s.id}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          document
+                            .getElementById(s.id)
+                            ?.scrollIntoView({ behavior: "smooth" });
+                        }}
+                        className="nav-link"
+                      >
+                        {s.label}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </Collapse.Panel>
+            </Collapse>
+          ) : (
+            sections.map((s) => (
+              <a
+                key={s.id}
+                href={`#${s.id}`}
+                className={activeId === s.id ? "nav-link active" : "nav-link"}
+              >
+                {s.label}
+              </a>
+            ))
+          )}
+        </div>
       </motion.nav>
 
       {/* 页面内容 */}
@@ -174,8 +178,11 @@ const NewAchor: React.FC = () => {
           <Part6 />
         </section>
       </div>
+
+      {/* Drawer */}
+      <Part7 open={open} onClose={() => setOpen(false)} />
     </div>
   );
 };
 
-export default NewAchor;
+export default NewAnchor;

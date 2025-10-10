@@ -15,3 +15,9 @@ html {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+.ant-btn:focus,
+.ant-btn:focus-visible {
+  outline: none !important;
+}
+

@@ -56,11 +56,6 @@
     }
 }
 
-.part1button:focus {
-    outline: none;
-    /* box-shadow: none; */
-}
-
 .part1button:hover {
     background-color: white !important;
     color: #1677FF !important;
