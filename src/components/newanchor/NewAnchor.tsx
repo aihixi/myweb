@@ -111,7 +111,7 @@ const NewAnchor: React.FC = () => {
         variants={variants}
       >
         <div className="drawert">
-          <Button type="primary" onClick={() => setOpen(true)} />
+          <Button type="primary" onClick={() => {setOpen(true);}} />
         </div>
         <div className="navcontent">
           {isMobile ? (
