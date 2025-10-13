@@ -44,7 +44,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
         description: "晴",
         humidity: 50,
         wind_kph: 10,
-        icon: "https://cdn-icons-png.flaticon.com/512/869/869869.png", // ☀️ 默认天气图标
+        icon: "https://cdn.weatherapi.com/weather/64x64/day/116.png", // ☀️ 默认天气图标
         air_quality_index: null,
       });
     }
