@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { getWeather } from "../../api"; // ✅ 你的API函数
 import "./WeatherCard.css";
 
+import UseAnimations from 'react-useanimations';
+import loading from 'react-useanimations/lib/loading';
+
 interface WeatherData {
   city: string;
   temp: number;
@@ -27,11 +30,10 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
   const getWeatherClick = async () => {
     try {
       // ✅ 1. 获取公网 IP
-      const res = await fetch("https://api.ipify.org?format=json");
+      const res = await fetch("https://ipapi.co/json/");
       const data = await res.json();
-
       // ✅ 2. 使用 IP 获取天气
-      const weather = await getWeather(data.ip);
+      const weather = await getWeather(data.city);
       console.log("WeatherData:", weather);
 
       // ✅ 3. 保存到 state
@@ -45,41 +47,51 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
         humidity: 50,
         wind_kph: 10,
         icon: "https://cdn.weatherapi.com/weather/64x64/day/116.png", // ☀️ 默认天气图标
-        air_quality_index: null,
+        air_quality_index: 3,
       });
     }
   };
 
   return (
-    <div className="weather-card">
-      {/* ✅ 判断数据是否加载完成 */}
-      {weatherData ? (
-        <div id="weatherDisplay">
-          <div className="row1">
-            <div className="r1c1">
-              <span style={{fontSize: '1.5rem'}}>{weatherData.city}</span>
-              <span style={{fontSize: '1rem'}}>{weatherData.description}</span>
-            </div>
-            <div className="r1c2">
-              <img src={weatherData.icon} alt="Weather Icon" />
-            </div>
-          </div>
-
-          <div className="row2">{weatherData.temp}°C</div>
-
-          <div className="row3">
-            <span>湿度: {weatherData.humidity}%</span>
-            <span>风速: {weatherData.wind_kph} km/h</span>
-          </div>
-
-          <div className="row4">
-            空气质量指数: {weatherData.air_quality_index}
-          </div>
-        </div>
-      ) : (
-        <p>正在加载天气数据...</p>
-      )}
+    <div className="weathercard">
+  <div id="weatherDisplay">
+    <div className="row1">
+      <div className="r1c1">
+        <span style={{ fontSize: '24px' }}>{weatherData?.city || ''}</span>
+        <span style={{ fontSize: '16px', marginLeft: '0.5rem' }}>{weatherData?.description || ''}</span>
+      </div>
+      <div className="r1c2">
+        {weatherData?.icon ? (
+          <img src={weatherData.icon} alt="Weather Icon" />
+        ) : (
+          <span></span>
+        )}
+      </div>
     </div>
+
+    <div className="row2">{weatherData?.temp !== undefined ? `${weatherData.temp}°C` : 
+      <UseAnimations
+        animation={loading}
+        loop={true} // true 时循环动画
+        size={50}
+        strokeColor="#1890FF"
+      />}</div>
+
+    <div className="row3">
+      <span>{weatherData?.humidity !== undefined ? `湿度: ${weatherData.humidity}%` : ''}</span>
+      <span>{weatherData?.wind_kph !== undefined ? `风速: ${weatherData.wind_kph} km/h` : ''}</span>
+    </div>
+
+    <div className="row4">
+      <div>
+        {weatherData?.air_quality_index !== null && weatherData?.air_quality_index !== undefined
+          ? `空气质量指数: ${weatherData.air_quality_index}`
+          : ''}
+        </div>
+    </div>
+  </div>
+</div>
+
   );
 };
 
