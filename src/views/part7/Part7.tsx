@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { Drawer } from 'antd';
 import { useMediaQuery } from "react-responsive";
-
-import { getWeather } from "../../api"; // ✅ 引入API
+import WeatherCard from '../../components/weathercard/WeatherCard';
 
 interface AppProps {
   open: boolean;              // 由父组件控制 Drawer 是否打开
@@ -13,35 +12,38 @@ const Part7: React.FC<AppProps> = ({ open = false, onClose }) => {
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const heightD = isMobile ? '60px' : '65px';
+  const [loading, setLoading] = React.useState<boolean>(true);
 
   useEffect(() => {
-    if (open) {
-      // 当 open 从 false 变为 true 时触发
-      console.log("open 变成 true，触发函数");
-      getWeatherClick();
-    }
-  }, [open]); // 监听 open 值的变化
+    showLoading();
+  }, [open]);
 
-  const getWeatherClick = async () => { 
-    const weatherData = await getWeather("Beijing");
-    console.log(weatherData);
+  const showLoading = () => {
+    setLoading(true);
+
+    // Simple loading mock. You should add cleanup logic in real world.
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   return (
     <div>
       <Drawer
-        title="Basic Drawer"
+        title="杂项"
         closable={{ 'aria-label': 'Close Button' }}
         placement='left'
         onClose={onClose}
         open={open}
+        loading={loading}
         styles={{
           header: {
             minHeight: heightD
           }
         }}
       >
-        <p>Some contents...</p>
+        <WeatherCard refresh={open}/>
+        <hr />
       </Drawer>
     </div>
   );
