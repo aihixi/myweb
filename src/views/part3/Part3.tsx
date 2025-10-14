@@ -23,7 +23,7 @@ const Part3: React.FC = () => {
                 fontWeight: '700', 
                 margin: '10px',
                 textAlign: 'left', 
-                marginLeft: '32px',
+                marginLeft: '10px',
                 color: 'white'
               }}
               >

@@ -74,7 +74,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
         animation={loading}
         loop={true} // true 时循环动画
         size={50}
-        strokeColor="#1890FF"
+        strokeColor="#005bb0ff"
       />}</div>
 
     <div className="row3">

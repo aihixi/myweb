@@ -24,19 +24,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, 
-    rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0.1) 25%,
-    rgba(255, 255, 255, 0.05) 50%,
-    rgba(255, 255, 255, 0.02) 75%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: #4a90e2;
   pointer-events: none;
 }
 
 #weatherDisplay:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .row1 {
@@ -65,10 +59,11 @@
 .row2 {
   display: flex;
   justify-content: space-around;
-  padding: 0 0 16px;
+  padding: 0 0 24px;
   z-index: 1;
   backdrop-filter: blur(5px);
   font-size: 48px;
+  font-weight: 600;
 }
 
 .row3 {
