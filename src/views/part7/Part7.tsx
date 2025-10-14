@@ -46,6 +46,7 @@ const Part7: React.FC<AppProps> = ({ open = false, onClose }) => {
         <WeatherCard refresh={open}/>
         <hr />
         <Calendar />
+        <hr />
       </Drawer>
     </div>
   );
