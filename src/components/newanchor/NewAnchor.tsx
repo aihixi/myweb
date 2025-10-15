@@ -78,6 +78,18 @@ const NewAnchor: React.FC = () => {
     };
   }, [open]); // ✅ 注意加 open 依赖
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // 例如：Ctrl + B 打开侧边栏
+      if (e.key === "F2") setOpen(open => !open);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setOpen]);
+   
   // 滚轮事件
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     if (open) return;

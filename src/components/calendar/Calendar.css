@@ -56,9 +56,23 @@
 }
 
 .calendar-day {
-  padding: 12px 0;
+  padding: 2px 0;
   border: 1px solid #f0f0f0;
   transition: background 0.2s;
+}
+
+.calendar-day.highlight {
+  color: #e91e63;
+  font-weight: 600;
+}
+
+.calendar-day .gregorian {
+  font-size: 15px;
+}
+
+.calendar-day .lunar {
+  font-size: 12px;
+  color: #888;
 }
 
 .calendar-day:hover {

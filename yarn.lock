@@ -1506,6 +1506,11 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
+lunar-typescript@^1.8.2:
+  version "1.8.2"
+  resolved "https://registry.npmmirror.com/lunar-typescript/-/lunar-typescript-1.8.2.tgz"
+  integrity sha512-LUZdwZ7r4wmJMoDt+JOPba7sbmzZkIqnMsShSlclgd6xgI1Al9lHaeAAW2Ekm8jIxY3fU2KpQAMi+zvTXv5f3A==
+
 matchmediaquery@^0.4.2:
   version "0.4.2"
   resolved "https://registry.npmmirror.com/matchmediaquery/-/matchmediaquery-0.4.2.tgz"
