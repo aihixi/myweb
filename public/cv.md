@@ -12,7 +12,7 @@
 ## 💡 专业技能
 
 ### 🎯 前端技术
-- 掌握 **React、TypeScript、JavaScript** 等现代前端技术栈  
+- 掌握 **React、Vue3、TypeScript、JavaScript** 等现代前端技术栈  
 - 具备 **组件化开发与模块化架构设计** 能力，代码结构清晰可维护  
 - 了解 **Vite** 构建工具，能够进行项目打包与性能优化  
 - 使用 **Ant Design** 等 UI 组件库，支持主题定制与风格统一  

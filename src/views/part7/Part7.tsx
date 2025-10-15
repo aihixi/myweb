@@ -3,6 +3,7 @@ import { Drawer } from 'antd';
 import { useMediaQuery } from "react-responsive";
 import WeatherCard from '../../components/weathercard/WeatherCard';
 import Calendar from '../../components/calendar/Calendar';
+import SearchBox from '../../components/searchbox/SearchBox';
 
 interface AppProps {
   open: boolean;              // 由父组件控制 Drawer 是否打开
@@ -43,6 +44,8 @@ const Part7: React.FC<AppProps> = ({ open = false, onClose }) => {
           }
         }}
       >
+        <SearchBox />
+        <hr />
         <WeatherCard refresh={open}/>
         <hr />
         <Calendar />
