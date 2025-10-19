@@ -69,11 +69,15 @@ const Calendar: React.FC = () => {
           return (
             <div
               key={index}
-              className={`calendar-day ${isToday ? "today" : ""} ${
-                lunarFestival || jieqi ? "highlight" : ""
-              }`}
+              className={`calendar-day ${isToday ? "today" : ""}`}
             >
-              <div className="gregorian">{day}</div>
+              <div 
+                className={`
+                  ${isToday ? "today" : "gregorian"} 
+                  ${lunarFestival || jieqi ? "highlight" : ""
+                }`}
+              >
+                {day}</div>
               <div className="lunar" style={isToday ? { color: "white" } : undefined}>{displayText}</div>
             </div>
           );

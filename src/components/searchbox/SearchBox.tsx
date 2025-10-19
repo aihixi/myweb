@@ -14,6 +14,17 @@ const SearchBox: React.FC = () => {
       "_blank" // 🔹 在新标签页中打开
     );
     }
+    else {
+      const formElement = document.querySelector('.search-form') as HTMLElement;
+      const buttonElement = document.querySelector('.search-button') as HTMLElement;
+      if (formElement) {
+        formElement.classList.add('shake');
+        buttonElement.classList.add('error-button');
+        setTimeout(() => {
+          formElement.classList.remove('shake', 'error-shadow');
+          buttonElement.classList.remove('error-button');
+        }, 600); // 动画结束后移除类
+      }};
   };
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
@@ -24,15 +35,17 @@ const SearchBox: React.FC = () => {
     <div className="search-container">
       <form onSubmit={handleSearch} className="search-form">
         <input
-          type="text"
+          type="text" 
           className="search-input"
           placeholder="搜索"
           value={query}
           onChange={handleInputChange}
         />
-        <button type="submit" className="search-button">
-          <CiSearch className='searchicon' size={30} />
+        <div className='searchicon'>
+          <button type="submit" className="search-button">
+          <CiSearch size={30} />
         </button>
+        </div>
       </form>
     </div>
   );

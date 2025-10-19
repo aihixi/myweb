@@ -3,16 +3,20 @@
   box-sizing: border-box;
 }
 
+/* ===== 默认浅色主题 ===== */
 .search-form {
   display: flex;
   align-items: center;
-  background: white;
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
   transition: box-shadow 0.3s ease;
+  background-color: #ffffff;        /* 浅色背景 */
+  color: #1a1a1a;                  /* 深色文字 */
+  border: 1px solid #ddd;
 }
 
+/* 聚焦状态阴影 */
 .search-form:has(.search-input:focus) {
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
 }
@@ -26,6 +30,8 @@
   border-radius: 8px;
   margin-right: 10px;
   box-sizing: border-box;
+  background-color: transparent;
+  color: inherit; /* 跟随父级颜色 */
 }
 
 .search-button {
@@ -34,6 +40,8 @@
   border: none;
   border-radius: 0 8px 8px 0;
   transition: all 0.3s ease;
+  transform-origin: center;
+  color: inherit; /* 同文字颜色 */
 }
 
 .search-button:focus {
@@ -41,6 +49,54 @@
 }
 
 .search-button:hover {
+  color: #4a90e2;
+}
+
+.searchicon {
+  transition: transform 0.3s ease;
+  animation: rotate 0.4s ease;
+}
+
+.searchicon:hover {
   transform: scale(1.2);
-  color:#4a90e2;
+}
+
+/* 旋转动画 */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-button { 
+  animation: rotate 0.4s ease;
+  color: rgba(255, 0, 0, 0.6) !important;
+}
+
+/* 抖动动画 */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
+}
+
+/* ===== 自动暗色主题 ===== */
+@media (prefers-color-scheme: dark) {
+  .search-form {
+    background-color: #1e1e1e;      /* 深色背景 */
+    color: #e0e0e0;                 /* 浅灰文字 */
+    border: 1px solid #333;
+  }
+
+  .search-button:hover {
+    color: #7ab8ff; /* 暗色下更柔和的蓝 */
+  }
+
+  .shake {
+    box-shadow: 0 0 6px rgba(255, 100, 100, 0.6);
+  }
 }

@@ -132,11 +132,14 @@ const NewAnchor: React.FC = () => {
             <Collapse
               bordered={false}
               expandIcon={({ isActive }) => (
-                <CaretRightOutlined rotate={isActive ? 90 : 0} />
+                <CaretRightOutlined
+                  rotate={isActive ? 90 : 0}
+                  style={{ color: 'CanvasText' }}
+                />
               )}
               style={{ backgroundColor: "transparent", width: "110px" }}
             >
-              <Collapse.Panel header="导航" key="nav">
+              <Collapse.Panel header={<span style={{ color: 'CanvasText' }}>导航</span>} key="nav" >
                 <div className="mobile-nav-links">
                   {sections.map((s) => (
                     <div key={s.id} className="mobile-nav-item">

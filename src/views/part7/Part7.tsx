@@ -11,10 +11,12 @@ interface AppProps {
 }
 
 const Part7: React.FC<AppProps> = ({ open = false, onClose }) => {
-
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const heightD = isMobile ? '60px' : '65px';
   const [loading, setLoading] = React.useState<boolean>(true);
+
+  // 判断当前是否暗色主题
+  const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   useEffect(() => {
     showLoading();
@@ -22,37 +24,41 @@ const Part7: React.FC<AppProps> = ({ open = false, onClose }) => {
 
   const showLoading = () => {
     setLoading(true);
+    setTimeout(() => setLoading(false), 2000);
+  };
 
-    // Simple loading mock. You should add cleanup logic in real world.
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+  const drawerStyle = {
+    backgroundColor: isDark ? "#1e1e1e" : "#ffffff",
+    color: isDark ? "#e0e0e0" : "#1a1a1a",
+  };
+
+  const headerStyle = {
+    minHeight: heightD,
+    backgroundColor: isDark ? "#2a2a2a" : "#f5f5f5",
+    color: "CanvasText",
   };
 
   return (
-    <div>
-      <Drawer
-        title="杂项"
-        closable={{ 'aria-label': 'Close Button' }}
-        placement='left'
-        onClose={onClose}
-        open={open}
-        loading={loading}
-        styles={{
-          header: {
-            minHeight: heightD
-          }
-        }}
-      >
-        <SearchBox />
-        <hr />
-        <WeatherCard refresh={open}/>
-        <hr />
-        <Calendar />
-        <hr />
-      </Drawer>
-    </div>
+    <Drawer
+      title="杂项"
+      placement="left"
+      onClose={onClose}
+      open={open}
+      loading={loading}
+      styles={{
+        header: headerStyle,
+        body: drawerStyle,
+      }}
+    >
+      <SearchBox />
+      <hr />
+      <WeatherCard refresh={open} />
+      <hr />
+      <Calendar />
+      <hr />
+    </Drawer>
   );
 };
+
 
 export default Part7;

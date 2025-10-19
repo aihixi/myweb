@@ -49,6 +49,7 @@
 }
 
 .calendar-weekday {
+  color:rgba(0, 0, 0, 0.646);
   padding: 8px 0;
   font-weight: bold;
   background: #f4f4f4;
@@ -61,7 +62,11 @@
   transition: background 0.2s;
 }
 
-.calendar-day.highlight {
+.gregorian {
+  color: black;
+}
+
+.highlight {
   color: #e91e63;
   font-weight: 600;
 }
