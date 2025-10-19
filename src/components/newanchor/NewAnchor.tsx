@@ -123,7 +123,7 @@ const NewAnchor: React.FC = () => {
         variants={variants}
       >
         <div className="drawert">
-          <Button color="default"  onClick={() => {setOpen(true);}} >
+          <Button onClick={() => {setOpen(true);}} >
             侧边
           </Button>
         </div>

@@ -101,43 +101,43 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
   };
 
   return (
-    <div className="weathercard" >
-      <div id="weatherDisplay" ref={ref} onClick={handleClick} style={{ position: 'relative', overflow: 'hidden' }}>
-        <div className="row1">
-          <div className="r1c1">
-            <span style={{ fontSize: '24px' }}>{weatherData?.city || ''}</span>
-            <span style={{ fontSize: '16px', marginLeft: '0.5rem' }}>{weatherData?.description || ''}</span>
-          </div>
-          <div className="r1c2">
-            {weatherData?.icon ? (
-              <img src={weatherData.icon} alt="Weather Icon" />
-            ) : (
-              <span></span>
-            )}
-          </div>
-        </div>
-          
-        <div className="row2">{weatherData?.temp !== undefined ? `${weatherData.temp}°C` : 
-          <UseAnimations
-            animation={loading}
-            loop={true} // true 时循环动画
-            size={50}
-            strokeColor="#005bb0ff"
-          />}</div>
-    
-        <div className="row3">
-          <span>{weatherData?.humidity !== undefined ? `湿度: ${weatherData.humidity}%` : ''}</span>
-          <span>{weatherData?.wind_kph !== undefined ? `风速: ${weatherData.wind_kph} km/h` : ''}</span>
-        </div>
-          
-        <div className="row4">
-          <div>
-            {weatherData?.air_quality_index !== null && weatherData?.air_quality_index !== undefined
-              ? `空气质量指数: ${weatherData.air_quality_index}`
-              : ''}
+    <div className="weathercard" style={{ marginTop: '20px', marginBottom: '20px', background: 'transparent' }}>
+        <div id="weatherDisplay" ref={ref} onClick={handleClick} >
+          <div className="row1">
+            <div className="r1c1">
+              <span style={{ fontSize: '24px' }}>{weatherData?.city || ''}</span>
+              <span style={{ fontSize: '16px', marginLeft: '0.5rem' }}>{weatherData?.description || ''}</span>
             </div>
+            <div className="r1c2">
+              {weatherData?.icon ? (
+                <img src={weatherData.icon} alt="Weather Icon" />
+              ) : (
+                <span></span>
+              )}
+            </div>
+          </div>
+            
+          <div className="row2">{weatherData?.temp !== undefined ? `${weatherData.temp}°C` : 
+            <UseAnimations
+              animation={loading}
+              loop={true} // true 时循环动画
+              size={50}
+              strokeColor="#005bb0ff"
+            />}</div>
+      
+          <div className="row3">
+            <span>{weatherData?.humidity !== undefined ? `湿度: ${weatherData.humidity}%` : ''}</span>
+            <span>{weatherData?.wind_kph !== undefined ? `风速: ${weatherData.wind_kph} km/h` : ''}</span>
+          </div>
+            
+          <div className="row4">
+            <div>
+              {weatherData?.air_quality_index !== null && weatherData?.air_quality_index !== undefined
+                ? `空气质量指数: ${weatherData.air_quality_index}`
+                : ''}
+              </div>
+          </div>
         </div>
-      </div>
     </div>
     
     );
