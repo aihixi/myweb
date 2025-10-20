@@ -40,7 +40,7 @@
 
 .textinput:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  transform: translateY(-5px);
+  transform: scale(1.02);
 }
 
 .sendbutton { 
