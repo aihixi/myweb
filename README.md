@@ -95,16 +95,11 @@ myweb/
 
 #### Part2 - 技能展示
 - 左侧文字介绍技能信息
-- 右侧PC模型3D动画展示
+- 右侧PC模型动画展示
 
 #### Part3 - 教育经历
-- 展示学校信息
-- 结合教育相关内容介绍
 
 #### Part4 - 项目展示
-- 以卡片形式展示项目作品
-- 包含项目截图和简要介绍
-- 可点击跳转到GitHub仓库
 
 #### Part5 - 关于网站
 - 展示网站技术细节和特色功能
@@ -118,7 +113,6 @@ myweb/
 - 集成评论展示功能
 
 #### Part7 - 抽屉菜单
-- 移动端专用抽屉式导航菜单
 
 ### 4.4 动画组件 (myanimation)
 - [FallingPetals]([src/components/myanimation/fallingpetals/FallingPetals.tsx](https://codepen.io/rudtjd2548/pen/qBpVzxP?utm_source)): Canvas实现的花瓣飘落背景动画
@@ -132,7 +126,7 @@ myweb/
 
 ### 4.6 API 接口
 - api.ts: 封装了评论和天气相关的API接口
-- 支持留言提交和获取功能
+- 支持留言提交和获取功能（冻结）
 
 ---
 
