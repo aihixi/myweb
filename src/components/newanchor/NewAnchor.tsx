@@ -15,12 +15,12 @@ import Part6 from "../../views/part6/Part6";
 import Part7 from "../../views/part7/Part7";
 
 const sections = [
-  { id: "section1", label: "Section 1" },
-  { id: "section2", label: "Section 2" },
-  { id: "section3", label: "Section 3" },
-  { id: "section4", label: "Section 4" },
-  { id: "section5", label: "Section 5" },
-  { id: "section6", label: "Section 6" },
+  { id: "section1", label: "Home" },
+  { id: "section2", label: "Skills" },
+  { id: "section3", label: "Education" },
+  { id: "section4", label: "Projects" },
+  { id: "section5", label: "About" },
+  { id: "section6", label: "Contact" },
 ];
 
 const NewAnchor: React.FC = () => {
