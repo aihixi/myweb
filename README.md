@@ -115,7 +115,7 @@ myweb/
 #### Part7 - 抽屉菜单
 
 ### 4.4 动画组件 (myanimation)
-- [FallingPetals]([src/components/myanimation/fallingpetals/FallingPetals.tsx](https://codepen.io/rudtjd2548/pen/qBpVzxP?utm_source)): Canvas实现的花瓣飘落背景动画
+- [FallingPetals](https://codepen.io/rudtjd2548/pen/qBpVzxP?utm_source): Canvas实现的花瓣飘落背景动画
 - ScrollFadeIn: 滚动时内容淡入动画
 - Mypc: PC模型3D动画
 - Shpere: 球体3D动画
