@@ -76,6 +76,15 @@
   overflow: hidden;
 }
 
+.lottliecard {
+  height: calc(50% - 7.5px);
+  flex: 1;
+}
+
+.lottie {
+  height: 100%;
+}
+
 .second3 { 
   display: flex;
   flex-direction: column;

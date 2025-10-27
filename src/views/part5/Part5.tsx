@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import Lottie from "lottie-react";
 import './Part5.css';
 
 import VanillaTilt from 'vanilla-tilt'
+import Confusedmanwork from '../../assets/Lottie/Confused man at work.json'
 
 
 //{
@@ -43,25 +45,6 @@ const Part5: React.FC = () => {
     });
   }, []);
 
-  const [hover, setHover] = useState(false);
-  const [click, setClick] = useState(false);
-
-
-  const [poem, setPoem] = useState('');
-  const [from, setFrom] = useState('');
-
-  async function getPoem(): Promise<void> {
-    try {
-      const res = await fetch('https://v1.jinrishici.com/all.json')
-      const data = await res.json()
-      setPoem(data.content)
-      setFrom(`—— ${data.author}《${data.origin}》`)
-    } catch {
-      setPoem('加载失败，请稍后重试')
-      setFrom('')
-    }
-  }
-
   return (
     <div style={{ height: '100%' }}>
       <div className="part5">
@@ -72,16 +55,16 @@ const Part5: React.FC = () => {
           {/* 第一行 */}
           <div className="part5firstrow">
             <div className="first1 part5allcard">
-              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>个人网站</div>
-              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>展示个人作品与技能的在线简历</div>
+              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>技术栈</div>
+              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>React19 + TypeScript + Vite</div>
             </div>
             <div className="first2 part5allcard">
-              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>技术栈</div>
-              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>使用 React 18 + Vite 4 + TypeScript 开发，确保代码质量和类型安全</div>
+              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>核心特性</div>
+              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>响应式设计、动画交互、组件化架构</div>
             </div>
             <div className="first3 part5allcard">
-              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>UI 框架</div>
-              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>采用 Ant Design 组件库，配合 Framer Motion 和 Vanilla-tilt 实现丝滑动画效果</div>
+              <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>项目亮点</div>
+              <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>现代化构建、高性能渲染、良好用户体验</div>
             </div>
           </div>
       
@@ -89,80 +72,65 @@ const Part5: React.FC = () => {
           <div className="part5secondrow">
             <div className="second1">
               <div className="second1card part5allcard">
-                <div style={{fontSize: '1.8rem', marginBottom: '20px', textAlign: 'center', letterSpacing: '1px'}}>项目结构</div>   
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>myweb</div>   
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>├── src</div>                     
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── components</div>
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── views</div>
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── assets</div>
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   ├── App.tsx</div>
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>│   └── main.tsx</div>
-                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>└── package.json</div>
+                <div style={{fontSize: '1.8rem', marginBottom: '20px', marginLeft: '20px', letterSpacing: '1px'}}>技术细节</div>   
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• React 19 Hooks 状态管理</div>   
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• TypeScript 类型安全</div>                     
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Vite 构建工具优化</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• VanillaTilt 3D交互效果</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Ant Design UI组件库</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Framer Motion 动画库</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• React Icons 图标系统</div>
+                <div style={{fontSize: '1.1rem', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Responsive 响应式布局</div>
               </div>
             </div>
             <div className="second2">
               <div
-                className="second2card part5allcard"
-                onClick={() => {
-                  getPoem();
-                  setClick(true);
-                }}
+                className="lottliecard"
               >
-                <span className={`text ${click ? "hiddenText" : "visibleText"}`} style={{fontSize: '1.6rem', letterSpacing: '2px'}}>
-                  今日诗词
-                </span>
-                <span className={`text ${click ? "visibleText" : "hiddenText"}`} style={{fontSize: '1.5rem', padding: '15px', lineHeight: '1.6'}}>
-                  {poem}
-                  <br />
-                  <span style={{fontSize: '1rem', marginTop: '8px', fontStyle: 'italic', opacity: '0.85', display: 'block'}}>{from}</span>
-                </span>
+                <Lottie
+                  animationData={Confusedmanwork}
+                  loop={true}
+                  className="lottie"
+                />
               </div>
               <div className="second2card part5allcard">
-                <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>模块化架构</div>
-                <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>采用组件化开发，保持代码整洁和可维护性</div>
+                <div style={{fontSize: '1.6rem', marginBottom: '8px'}}>性能优化</div>
+                <div style={{fontSize: '1rem', fontWeight: 'normal', lineHeight: '1.4', opacity: '0.9'}}>懒加载、代码分割、资源压缩</div>
               </div>
             </div>
             <div className="second3">
               <div
                 className="second3card part5allcard"
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
               >
-                <span className={`text ${hover ? "hiddenText" : "visibleText"}`} style={{fontSize: '1.4rem', letterSpacing: '1px'}}>
-                  樱花特效
-                </span>
-                <span className={`text ${hover ? "visibleText" : "hiddenText"}`} style={{fontSize: '1.1rem', lineHeight: '1.4'}}>
-                  浪漫飘落的花瓣动画
-                </span>
+                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>动画实现</div>
+                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>VanillaTilt 3D效果、滚动触发动画、粒子效果</div>
               </div>
               <div className="second3card part5allcard">
-                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>智能导航</div>
-                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>平滑滚动导航</div>
+                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>响应式设计</div>
+                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>适配移动端、平板和桌面端</div>
               </div>
               <div className="second3card part5allcard">
-                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>3D效果</div>
-                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>悬浮立体感</div>
-              </div>
-              <div className="second3card part5allcard">
-                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>视差滚动</div>
-                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>沉浸式体验</div>
+                <div style={{fontSize: '1.4rem', marginBottom: '6px', letterSpacing: '1px'}}>组件封装</div>
+                <div style={{fontSize: '0.95rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>高内聚低耦合、可复用组件</div>
               </div>
             </div>
             <div className="second4">
               <div className="second4one">
                 <div className="second4onecard part5allcard">
-                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>响应式</div>
-                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>适配各种屏幕</div>
+                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>模块化</div>
+                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>ES6模块系统、按需加载</div>
                 </div>
                 <div className="second4onecard part5allcard">
-                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>性能优化</div>
-                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>快速加载</div>
+                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>易维护</div>
+                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>清晰目录结构、注释完整</div>
                 </div>
               </div>
               <div className="second4two">
                 <div className="second4twocard part5allcard">
-                  <div style={{fontSize: '1.3rem', marginBottom: '6px', letterSpacing: '1px'}}>作者：aihixi</div>
-                  <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.85'}}>2025 © All Rights Reserved</div>
+                  <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
+                    <div style={{fontSize: '1.4rem', marginBottom: '10px'}}>持续集成</div>
+                    <div style={{fontSize: '0.9rem', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9', textAlign: 'center'}}>Git版本控制、自动化部署</div>
+                  </div>
                 </div>
               </div>
             </div>
