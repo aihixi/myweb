@@ -58,7 +58,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    getWeatherClick();
+    if (refresh) {
+      getWeatherClick();
+    }
   }, [refresh]);
 
   const getWeatherClick = async () => {

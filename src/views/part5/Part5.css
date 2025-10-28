@@ -79,6 +79,8 @@
 .lottliecard {
   height: calc(50% - 7.5px);
   flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .lottie {
@@ -137,32 +139,62 @@
   opacity: 0;
 }
 
-/* 响应式设计 */
+/* 🌈 响应式优化 */
 @media screen and (max-width: 1200px) {
-  .part5firstrow {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .first1, .first2, .first3 {
-    width: 80%;
-    margin-bottom: 15px;
-  }
-
+  /* 调整整体布局为纵向排列 */
+  .part5firstrow,
   .part5secondrow {
     flex-direction: column;
     align-items: center;
+    gap: 20px; /* 增加卡片之间的间距 */
   }
 
+  /* 第一行卡片宽度与间距 */
+  .first1, .first2, .first3 {
+    width: 90%;
+    height: auto; /* 高度自适应内容 */
+    min-height: 120px;
+  }
+
+  /* 第二行每组宽度 */
   .second1, .second2, .second3, .second4 {
-    width: 80%;
-    margin-bottom: 15px;
-  }
-
-  .second1card {
+    width: 90%;
     height: auto;
-    padding: 20px 0;
   }
 
+  /* 内容卡片内部留白，防止文字贴边 */
+  .second1card,
+  .second2card,
+  .second3card,
+  .second4onecard,
+  .second4twocard {
+    height: auto;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  /* 统一卡片间距 */
+  .second2, .second3, .second4 {
+    row-gap: 12px;
+  }
+
+  /* 调整文字大小和行高以适配小屏 */
+  .part5allcard {
+    /* font-size: 1.2rem; */
+    line-height: 1.5;
+    text-align: center; /* 小屏更适合居中显示 */
+  }
+
+  /* 文本渐显动画保持流畅 */
+  .text {
+    position: static;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .lottie {
+    width: 50%;
+  }
 }
+
 
