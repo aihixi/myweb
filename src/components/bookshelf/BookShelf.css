@@ -3,7 +3,7 @@
   align-items: flex-end;
   justify-content: center;
   width: 100%;
-  padding: 24px 32px 12px;
+  padding-bottom: 16px;
   border-bottom: 3px solid rgba(0, 0, 0, 0.15);
   background: transparent;
   transition: all 0.3s ease;
@@ -105,10 +105,6 @@
 
 /* 响应式调整 */
 @media (max-width: 768px) {
-  .bookshelf {
-    padding: 20px 24px 10px;
-  }
-
   .books {
     gap: 8px;
   }

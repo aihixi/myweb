@@ -13,7 +13,7 @@ const Part3: React.FC = () => {
       <div style={{height: '100%'}}>
         <div className='part3'> 
           <Card
-            className='part3tcard1'
+            className='part3tcard1' 
             hoverable
             variant="borderless"
           > 
