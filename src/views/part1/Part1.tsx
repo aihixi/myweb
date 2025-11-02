@@ -29,9 +29,9 @@ const Part1: React.FC = () => {
                                     document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
                             >
-                                <h1>
+                                <span style= {{ fontSize: '3rem', fontWeight: '900' }}>
                                     我的联系
-                                </h1>
+                                </span>
                             </Button>
                         </div>
                     </div>

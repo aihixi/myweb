@@ -127,7 +127,6 @@ const NewAnchor: React.FC = () => {
             className="drawer-button"
             onClick={() => { setOpen(true); }}
           >
-            <CaretRightOutlined rotate={open ? 90 : 0} />
             侧边
           </span>
         </div>

@@ -18,6 +18,8 @@
 .part4card1 { 
   width: 234px;
   overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 0 4px 10px 0.1px rgba(0, 0, 0, 0.2)!important;
 }
 
 .part4img { 

@@ -34,7 +34,8 @@
     rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
   );
   backdrop-filter: blur(40px);
-  border-radius: 12px;
+  box-shadow: 0 4px 10px 0.1px rgba(0, 0, 0, 0.2);
+  /* border-radius: 12px; */
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -82,9 +83,10 @@
     rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
   );
   backdrop-filter: blur(40px);
-  border-radius: 12px;
+  /* border-radius: 12px; */
   padding: 20px;
   box-sizing: border-box;
+  box-shadow: 0 4px 10px 0.1px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 

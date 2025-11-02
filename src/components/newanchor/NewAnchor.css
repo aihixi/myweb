@@ -63,6 +63,9 @@
     font-size: 1.8rem;
     font-weight: normal;
   }
+  .drawer-button {
+    margin-bottom: 7px;
+  }
 }
 
 .mobile-nav-links {
@@ -125,6 +128,7 @@ html {
   border: none;
   border-radius: 8px;
   transition: color 0.3s ease;
+  font-size: 16px;
 }
 
 .drawert .drawer-button:hover {

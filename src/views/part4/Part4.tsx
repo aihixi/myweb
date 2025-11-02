@@ -17,6 +17,7 @@ const Part4: React.FC = () => {
             </div>
             <div className='projects'>
               <Card
+                variant="borderless"
                 hoverable
                 cover={<img className='part4img' alt="Culator" src={Culatorpng} />}
                 className='part4card1'
@@ -25,6 +26,7 @@ const Part4: React.FC = () => {
                 <Meta title="Standardcalculator2" description="一款功能简单的计算器" />
               </Card>
               <Card
+                variant="borderless"
                 hoverable
                 cover={<img className='part4img' alt="Profile" src={Profilepng} />}
                 className='part4card1'
