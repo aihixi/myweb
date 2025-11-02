@@ -33,10 +33,10 @@ const Part2Text: React.FC = () => {
                 基于 Vite 构建工具搭建高效开发环境, 运用 Vue3 与 React 两大主流框架，擅长组件化开发，保障代码可维护性与扩展性
             </li>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', textAlign: 'left' }}>
-                掌握 Electron 技术，可将 Web 应用封装为跨平台桌面应用（Windows/macOS），拓展应用使用场景
+                了解 Electron 技术，可将 Web 应用封装为跨平台桌面应用（Windows/macOS），拓展应用使用场景
             </li>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', textAlign: 'left' }}>
-                可以使用python进行后端开发，并使用mysql进行数据库管理
+                可以使用python，C++进行后端开发，并使用mysql进行数据库管理
             </li>
         </ul>
         <div style={{textAlign: 'left',paddingLeft: '24px'}}>

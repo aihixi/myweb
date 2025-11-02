@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
-import { Button, Collapse } from "antd";
+import { Collapse } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 
 import "./NewAnchor.css";
@@ -123,9 +123,13 @@ const NewAnchor: React.FC = () => {
         variants={variants}
       >
         <div className="drawert">
-          <Button onClick={() => {setOpen(true);}} >
+          <span
+            className="drawer-button"
+            onClick={() => { setOpen(true); }}
+          >
+            <CaretRightOutlined rotate={open ? 90 : 0} />
             侧边
-          </Button>
+          </span>
         </div>
         <div className="navcontent">
           {isMobile ? (

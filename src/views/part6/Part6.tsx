@@ -34,65 +34,30 @@ const Part6: React.FC = () => {
 };
 
   return (
-    <div style={{height: '100%' }}>
+    <div className='part6-root'>
       <div className='part6'>
-        <div style={{width: '100vw'}}><h1>Contact Me</h1></div>
+        <div className='part6-title-wrap'><h1>Contact Me</h1></div>
         <div className='part6body'>
           <ScrollFadeIn direction='left'> 
             <div className='part6bodyleft'>
               <div className='textinput'>
-                <h2 style={{fontSize: '24px'}}>Do a comment</h2>
-                <div 
-                  style={{
-                    display: 'flex', 
-                    columnGap: '16px', 
-                    background: 'transparent',
-                    backdropFilter: 'blur(4px)',
-                    borderRadius: '8px',
-                  }}
-                >
+                <h2 className='section-title'>Do a comment</h2>
+                <div className='field-row'>
                   <IoPersonCircleSharp size={32} />
                   <input 
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)} // 更新输入框的值
                     placeholder='Name' 
-                    style={{
-                      width: '100%', 
-                      height: '32px', 
-                      background: 'transparent', 
-                      border: 'none', 
-                      outline: 'none', 
-                      fontSize: '16px', 
-                      fontFamily: 'inherit',
-                    }} 
+                    className='input-field' 
                   />
                 </div>
-                <div 
-                  style={{
-                    display: 'flex', 
-                    columnGap: '16px', 
-                    background: 'transparent',
-                    backdropFilter: 'blur(4px)',
-                    borderRadius: '8px',
-                  }}
-                >
+                <div className='field-row'>
                   <TiDocumentText size={32} />
                   <textarea
                     value={textValue}
                     onChange={(e) => setTextValue(e.target.value)} // 更新输入框的值
                     placeholder="Message"
-                    style={{
-                      width: '100%',
-                      height: '128px',
-                      background: 'transparent',
-                      border: 'none',
-                      outline: 'none',
-                      resize: 'none',   // 禁止拖拽缩放
-                      fontSize: '16px', // 改为使用em单位以匹配全局字体设置
-                      fontFamily: 'inherit', // 继承字体族
-                      paddingTop: '6px',
-                      paddingBottom: '6px'
-                    }}
+                    className='textarea-field'
                   />
                 </div>
                 <div>
@@ -101,10 +66,10 @@ const Part6: React.FC = () => {
                     className='sendbutton'
                     onClick={handleClick}
                   >
-                    Send
+                    <span>Send</span>
                   </Button>
                 </div>
-                <hr style={{width: '100%'}} />
+                <hr className='hr-full' />
               </div>
               <div className='econtact'>
                 <Part2Tag />

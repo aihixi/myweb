@@ -9,7 +9,7 @@ function App() {
 
   useEffect(() => {
     // 第一阶段：动画播放约 1.5s
-    const t1 = setTimeout(() => setLoading(false), 1500);
+    const t1 = setTimeout(() => setLoading(false), 3000);
 
     // 第二阶段：当 loading1 结束后，再延迟卸载整个 Loading 容器
     if (!loading1) {

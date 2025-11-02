@@ -22,9 +22,9 @@ const Bookshelf: React.FC<BookshelfProps> = ({
   ],
   bookname = [
     "C语言",
-    "HTML基础开发",
-    "Python程序设计",
-    "数据库系统概论",
+    "编译原理",
+    "Python",
+    "数据库",
     "数据结构",
     "计算机组成原理",
     "计算机网络",

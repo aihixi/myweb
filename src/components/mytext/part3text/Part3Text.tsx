@@ -11,13 +11,13 @@ const Part3Text: React.FC = () => {
         </h1>
         <div style={{ lineHeight: '1.6', padding: '0 8px' }}>
           <p style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', fontWeight: 'bold', textAlign: 'left' }}>
-              专业：计算机科学与技术
+              就读于天津工业大学，主修计算机科学与技术。
           </p>
           <div style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', textAlign: 'left' }}>
-              {/* 2023年9月——至今 */}
+              学习课程涵盖从语言基础到数据结构，算法设计，数据库概论和计算机组成原理等。
           </div>
           <p style={{ width: '100%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', fontWeight: 'bold', textAlign: 'left' }}>
-            已学习课程：
+            
           </p>
           <div style={{ 
             display: 'flex',

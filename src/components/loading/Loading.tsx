@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import loadingAnim from "../../assets/Lottie/CMS computer animation.json"; // 你的动画路径
+import loadingAnim from "../../assets/Lottie/Cat Coding.json"; // 你的动画路径
 import "./Loading.css"; // 你的样式路径
 
 interface LoadingProps {

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Lottie from "lottie-react";
 import './Part5.css';
 import VanillaTilt from 'vanilla-tilt'
-import ThinkingEmoji from '../../assets/Lottie/Thinking.json'
+import CatEmoji from '../../assets/Lottie/cat Mark loading.json'
 
 const Part5: React.FC = () => { 
 
@@ -46,20 +46,20 @@ const Part5: React.FC = () => {
             <div className="second1">
               <div className="second1card part5allcard">
                 <div style={{fontSize: '25px', marginBottom: '20px', marginLeft: '20px', letterSpacing: '1px'}}>技术细节</div>   
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• React 19 Hooks 状态管理</div>   
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• TypeScript 类型安全</div>                     
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Vite 构建工具优化</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• VanillaTilt 3D交互效果</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Ant Design UI组件库</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Framer Motion 动画库</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• React Icons 图标系统</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', fontFamily: 'monospace', lineHeight: '1.6'}}>• Responsive 响应式布局</div>
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• React 19 Hooks 状态管理</div>   
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• TypeScript 类型安全</div>                     
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Vite 构建工具优化</div>
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• VanillaTilt 3D交互效果</div>
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Ant Design UI组件库</div>
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Framer Motion 动画库</div>
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• React Icons 图标系统</div>
+                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Responsive 响应式布局</div>
               </div>
             </div>
             <div className="second2">
               <div className="lottliecard">
                 <Lottie
-                  animationData={ThinkingEmoji}
+                  animationData={CatEmoji}
                   loop={true}
                   className="lottie"
                 />
@@ -76,7 +76,7 @@ const Part5: React.FC = () => {
               </div>
               <div className="second3card part5allcard">
                 <div style={{fontSize: '25px', marginBottom: '6px', letterSpacing: '1px'}}>响应式设计</div>
-                <div style={{fontSize: '16px', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>适配移动端、平板和桌面端</div>
+                <div style={{fontSize: '16px', fontWeight: 'normal', lineHeight: '1.3', opacity: '0.9'}}>适配移动端和桌面端</div>
               </div>
               <div className="second3card part5allcard">
                 <div style={{fontSize: '25px', marginBottom: '6px', letterSpacing: '1px'}}>组件封装</div>

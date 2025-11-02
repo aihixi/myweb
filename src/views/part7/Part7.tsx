@@ -40,7 +40,7 @@ const Part7: React.FC<AppProps> = ({ open = false, onClose }) => {
 
   return (
     <Drawer
-      title="杂项"
+      title="侧边"
       placement="left"
       onClose={onClose}
       open={open}

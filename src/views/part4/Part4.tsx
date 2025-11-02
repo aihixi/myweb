@@ -28,7 +28,7 @@ const Part4: React.FC = () => {
                 hoverable
                 cover={<img className='part4img' alt="Profile" src={Profilepng} />}
                 className='part4card1'
-                onClick={() => {window.open('https://github.com/https://github.com/aihixi/myweb/Standardcalculator2')}}
+                onClick={() => {window.open('https://github.com/aihixi/myweb')}}
               >
                 <Meta title="Profileweb" description="个人网站" />
               </Card>
