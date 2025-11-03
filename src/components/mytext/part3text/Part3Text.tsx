@@ -1,13 +1,32 @@
 import Bookshelf from '../../bookshelf/BookShelf'
+import React, { useState } from 'react';
+import AnimatedSection from '../../myanimation/animatedsection/AnimatedSection'; // 导入新组件
+import dogRunning from "../../../assets/Lottie/Moody Dog.json"; // 动画路径
 
 const Part3Text: React.FC = () => {
+
+    const [dogRunningState, setDogRunning] = useState(false);
+
     return (
-      <div>
+      <div
+        onMouseEnter={()=> {setDogRunning(true)}}
+        onMouseLeave={()=> {setDogRunning(false)}}
+      >
         <h1 style={{
               textAlign: 'left', 
               marginLeft: '32px',
               backgroundClip: 'text',
-          }}>Education
+          }}>
+          <AnimatedSection 
+              animationState={dogRunningState}
+              text="Education" 
+              animationData={dogRunning} // 传入文本和动画数据
+          />
+          <hr style={{
+              width: '90%',
+              margin: '8px 0',
+              borderTop: '1px solid black',
+          }} />
         </h1>
         <div style={{ lineHeight: '1.6', padding: '0 8px' }}>
           <p style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', fontWeight: 'bold', textAlign: 'left' }}>

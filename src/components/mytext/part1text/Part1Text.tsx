@@ -1,10 +1,31 @@
+import React, { useState } from 'react';
+import AnimatedSection from '../../myanimation/animatedsection/AnimatedSection'; // 导入新组件
+import lionRunning from "../../../assets/Lottie/Lion Running.json"; // 动画路径
+
 const Part1Text: React.FC = () => {
+
+    const [lionRunningState, setLionRunning] = useState(false);
+
     return (
-      <div>
+      <div 
+        onMouseEnter={()=> {setLionRunning(true)}}
+        onMouseLeave={()=> {setLionRunning(false)}}
+    >
         <h1 style={{
                 textAlign: 'left', 
                 marginLeft: '32px',
-            }}>Introduce
+                marginRight: '32px',
+            }}>
+            <AnimatedSection 
+                animationState={lionRunningState}
+                text="Introduce" 
+                animationData={lionRunning} // 传入文本和动画数据
+            />
+            <hr style={{
+                width: '95%',
+                margin: '8px 0',
+                borderTop: '1px solid black',
+            }} />
         </h1>
         <ul style={{ lineHeight: '1.6', padding: '0 8px', listStyle: 'none' }}>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', fontWeight: 'bold', textAlign: 'left' }}>
@@ -18,7 +39,7 @@ const Part1Text: React.FC = () => {
             </li>
         </ul>
       </div>
-    )
+    );
 };
 
 export default Part1Text;

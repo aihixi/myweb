@@ -14,7 +14,7 @@
 .bookshelf::after {
   content: '';
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
   left: 0;
   right: 0;
   height: 20px;

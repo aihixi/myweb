@@ -26,25 +26,26 @@
   box-shadow: 0 1px 16px 4px #773072;
 }
 
-.educationimg { 
+.educationimg {
   display: flex;
-  max-width: max-content;
+  width: 100%;
+  padding: 0 16px 0 16px;
   justify-content: center;
   align-items: center;
-  padding: 16px;
   box-sizing: border-box;
   overflow: hidden;
 }
 
+
 .imgsize {
-  width: 100%;
-  height: 100%;
+  width: 70%;
+  height: 70%;
 }
 
 .educationontent { 
   display: flex;
   /* height: 50%; */
-  padding: 16px 16px 0 16px;
+  padding: 16px;
   color: aliceblue;
 }
 
@@ -77,9 +78,5 @@
     }
     .educationontent {
       padding: 0 16px 16px 16px;
-    }
-    .imgsize {
-      width: 90%;
-      height: 90%;
     }
 }

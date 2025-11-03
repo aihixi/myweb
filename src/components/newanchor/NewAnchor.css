@@ -129,6 +129,7 @@ html {
   border-radius: 8px;
   transition: color 0.3s ease;
   font-size: 16px;
+  cursor: pointer
 }
 
 .drawert .drawer-button:hover {

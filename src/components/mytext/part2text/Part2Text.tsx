@@ -1,5 +1,4 @@
 import { useMediaQuery } from "react-responsive";
-
 import { BiSolidFileHtml } from "react-icons/bi";
 import { BiSolidFileCss } from "react-icons/bi";
 import { BiLogoJavascript } from "react-icons/bi";
@@ -11,19 +10,38 @@ import { IoLogoElectron } from "react-icons/io5";
 import { SiCplusplus } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
-
 import './Part2Text.css'
+
+import React, { useState } from 'react';
+import AnimatedSection from '../../myanimation/animatedsection/AnimatedSection'; // 导入新组件
+import camelRunning from "../../../assets/Lottie/Baby Camel.json"; // 动画路径
+
 const Part2Text: React.FC = () => {
     
     const isMobile = useMediaQuery({ maxWidth: 768 });
     const iconsize = isMobile ? 48 : 64
 
+    const [camelRunningState, setCamelRunning] = useState(false);
+
     return (
-      <div>
+      <div
+        onMouseEnter={()=> {setCamelRunning(true)}}
+        onMouseLeave={()=> {setCamelRunning(false)}}
+      >
         <h1 style={{
                 textAlign: 'left', 
                 marginLeft: '32px',
-            }}>What Can I Do
+            }}>
+            <AnimatedSection 
+                animationState={camelRunningState}
+                text="Skills" 
+                animationData={camelRunning} // 传入文本和动画数据
+            />
+            <hr style={{
+                width: '90%',
+                margin: '8px 0',
+                borderTop: '1px solid black',
+            }} />
         </h1>
         <ul style={{ lineHeight: '1.6', padding: '0 8px', listStyle: 'none' }}>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', fontWeight: 'bold', textAlign: 'left' }}>

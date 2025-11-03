@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
+import { useIsMobile } from "../../components/mediaquery/MediaQuery";
 import { Collapse } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
 
@@ -111,7 +111,7 @@ const NewAnchor: React.FC = () => {
     },
   };
 
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useIsMobile();
 
   return (
     <div onWheel={handleWheel}>
