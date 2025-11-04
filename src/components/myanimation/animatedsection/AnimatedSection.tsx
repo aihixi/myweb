@@ -49,6 +49,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ animationState, text,
                     width: '100%',
                     justifyContent: isMobile ? 'center' : 'flex-start',
                     transition: 'transform 3s ease-in-out', // 平滑过渡效果
+                    position: 'relative',
                 }}
             >
                 <Lottie
