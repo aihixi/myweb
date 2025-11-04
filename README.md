@@ -56,7 +56,7 @@ This project serves as a **personal portfolio website**, showcasing personal inf
 
 - Part4 - Projects  
 
-#### Part5 - About  
+- Part5 - About  
 
 - Part6 - Contact / Message  
 
