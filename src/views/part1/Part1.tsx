@@ -30,7 +30,7 @@ const Part1: React.FC = () => {
                                 }}
                             >
                                 <span style= {{ fontSize: '3rem', fontWeight: '900' }}>
-                                    我的联系
+                                    Contact
                                 </span>
                             </Button>
                         </div>

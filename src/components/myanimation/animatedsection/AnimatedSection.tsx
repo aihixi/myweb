@@ -57,7 +57,9 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ animationState, text,
                     style={{
                         width: isMobile ? '170px' : '38%', // 移动端宽度和桌面端宽度不同
                         minWidth: '170px',
-                        marginBottom: '-30px',
+                        // marginBottom: '-30px',
+                        position: 'absolute',
+                        bottom: '-40px',
                     }}
                 />
             </div>

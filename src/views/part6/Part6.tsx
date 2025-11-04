@@ -36,7 +36,7 @@ const Part6: React.FC = () => {
   return (
     <div className='part6-root'>
       <div className='part6'>
-        <div className='part6-title-wrap'><h1>Contact Me</h1></div>
+        <div className='part6-title-wrap'><h1>Contact</h1></div>
         <div className='part6body'>
           <ScrollFadeIn direction='left'> 
             <div className='part6bodyleft'>
@@ -79,7 +79,7 @@ const Part6: React.FC = () => {
           <ScrollFadeIn direction='right'> 
             <div className='part6bodyright'>
               <div>
-                <h2 style={{fontSize: '24px'}}>Commends</h2>
+                <h2 style={{fontSize: '24px'}}>Comments</h2>
               </div>
               <div className='commends'>
                 <CommendCard refresh={refresh} />

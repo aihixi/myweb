@@ -22,7 +22,7 @@ const Part5: React.FC = () => {
     <div style={{ height: '100%' }}>
       <div className="part5">
         <div style={{ width: '100vw' }}>
-          <h1>About The Web</h1>
+          <h1>About</h1>
         </div>
         <div className="cardgroup">
           {/* 第一行 */}
@@ -45,15 +45,15 @@ const Part5: React.FC = () => {
           <div className="part5secondrow">
             <div className="second1">
               <div className="second1card part5allcard">
-                <div style={{fontSize: '25px', marginBottom: '20px', marginLeft: '20px', letterSpacing: '1px'}}>技术细节</div>   
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• React 19 Hooks 状态管理</div>   
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• TypeScript 类型安全</div>                     
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Vite 构建工具优化</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• VanillaTilt 3D交互效果</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Ant Design UI组件库</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Framer Motion 动画库</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• React Icons 图标系统</div>
-                <div style={{fontSize: '16px', marginLeft: '20px', lineHeight: '1.6'}}>• Responsive 响应式布局</div>
+                <div style={{fontSize: '25px', marginBottom: '20px', marginLeft: '24px'}}>技术细节</div>   
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• React 19 Hooks 状态管理</div>   
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• TypeScript 类型安全</div>                     
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• Vite 构建工具优化</div>
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• VanillaTilt 3D交互效果</div>
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• Ant Design UI组件库</div>
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• Framer Motion 动画库</div>
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• React Icons 图标系统</div>
+                <div style={{fontSize: '16px', fontWeight: 'normal', marginLeft: '20px', lineHeight: '1.6'}}>• Responsive 响应式布局</div>
               </div>
             </div>
             <div className="second2">

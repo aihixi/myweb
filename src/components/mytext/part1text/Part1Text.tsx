@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import AnimatedSection from '../../myanimation/animatedsection/AnimatedSection'; // 导入新组件
-import lionRunning from "../../../assets/Lottie/Lion Running.json"; // 动画路径
+import hedgehogRunning from "../../../assets/Lottie/Walking Hedgehog.json"; // 动画路径
 
 const Part1Text: React.FC = () => {
 
-    const [lionRunningState, setLionRunning] = useState(false);
+    const [hedgehogRunningState, setHedgehogRunning] = useState(false);
 
     return (
       <div 
-        onMouseEnter={()=> {setLionRunning(true)}}
-        onMouseLeave={()=> {setLionRunning(false)}}
+        onMouseEnter={()=> {setHedgehogRunning(true)}}
+        onMouseLeave={()=> {setHedgehogRunning(false)}}
     >
         <h1 style={{
                 textAlign: 'left', 
@@ -17,9 +17,9 @@ const Part1Text: React.FC = () => {
                 marginRight: '32px',
             }}>
             <AnimatedSection 
-                animationState={lionRunningState}
+                animationState={hedgehogRunningState}
                 text="Introduce" 
-                animationData={lionRunning} // 传入文本和动画数据
+                animationData={hedgehogRunning} // 传入文本和动画数据
             />
             <hr style={{
                 width: '95%',

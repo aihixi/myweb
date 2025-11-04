@@ -13,7 +13,7 @@ const Part4: React.FC = () => {
       <div style={{height: '100%'}}>
         <div className='part4'> 
             <div style={{ width: '100vw' }}>
-              <h1>What I Have Done</h1>
+              <h1>Projects</h1>
             </div>
             <div className='projects'>
               <Card
