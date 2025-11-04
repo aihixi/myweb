@@ -52,6 +52,7 @@
     rgba(0, 219, 222, 0.08)    /* 蓝绿色 30% 透明 */
   )!important;
   border: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .sendbutton span {
@@ -179,6 +180,7 @@
   border-radius: 8px;
   align-items: flex-start;
   padding: 6px 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
 }
 
@@ -206,7 +208,7 @@
 }
 
 .field-row:focus-within {
-  box-shadow: 0 0 8px rgba(66, 31, 219, 0.236);
+  box-shadow: 0 0 8px rgba(213, 31, 219, 0.295);
 }
 
 .hr-full {

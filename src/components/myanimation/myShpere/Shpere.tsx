@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import './Shpere.css';
 import Glasses from '../../../assets/image/imgsvg/图标_眼镜(icon_glasses)_爱给网_aigei_com.png';
 import { CiDesktopMouse2 } from "react-icons/ci";
+import { useIsMobile } from '../../mediaquery/MediaQuery';
 
 // === 扩展 HTMLDivElement 的类型，允许有 _listeners 属性 ===
 declare global {
@@ -15,6 +16,7 @@ const Sphere: React.FC = () => {
     const ballRef = useRef<HTMLDivElement>(null);
     const ballShadowRef = useRef<HTMLDivElement>(null);
     const mymouseRef = useRef<HTMLDivElement>(null);
+    const isMobile = useIsMobile();
 
     // 鼠标进入：启动动画 + 清除旧监听
     const handleBallEnter = () => {
@@ -43,7 +45,7 @@ const Sphere: React.FC = () => {
         const shadow = ballShadowRef.current;
         const mouse = mymouseRef.current;
 
-        if (ball && shadow && mouse) {
+        if (ball && shadow) {
             let stopped = false;
 
             const stopAfterLoop = () => {
@@ -51,7 +53,7 @@ const Sphere: React.FC = () => {
                 stopped = true;
                 ball.style.animationPlayState = 'paused';
                 shadow.style.animationPlayState = 'paused';
-                mouse.style.animationPlayState = 'paused';
+                if (mouse) mouse.style.animationPlayState = 'paused';
                 ball.removeEventListener('animationiteration', stopAfterLoop);
             };
 
@@ -73,11 +75,13 @@ const Sphere: React.FC = () => {
                 <img src={Glasses} alt="Glasses" className="glasses" />
             </div>
             <div className="part2ballshadow" ref={ballShadowRef}/>
-            <div style={{ width: '400px', display: 'flex', justifyContent: 'right' }}>
-                <div className='mymouse' ref={mymouseRef}>
-                    <CiDesktopMouse2 size={64} />
+            {!isMobile && (
+                <div style={{ width: '400px', display: 'flex', justifyContent: 'right' }}>
+                    <div className='mymouse' ref={mymouseRef}>
+                        <CiDesktopMouse2 size={64} />
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

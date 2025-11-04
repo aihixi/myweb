@@ -6,9 +6,9 @@
   justify-content: flex-end;
   align-items: center;
   background-image: url('../../../assets/image/imgsvg/laptop_zobkvkkw3jr9.svg');
-  background-size: contain;
+  /* background-size: contain; */
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 }
 
 .glasses {
@@ -31,6 +31,7 @@
   animation-play-state: paused;
   z-index: 2;
   /* 初始没有动画 */
+  position: absolute;
 }
 
 .part2ballshadow {
@@ -42,6 +43,7 @@
   filter: blur(2px);
   animation: shadowBounce 1s infinite;
   animation-play-state: paused;
+  position: relative;
 }
 
 .mymouse {
@@ -49,26 +51,8 @@
   animation: mousemove 1s infinite;
   animation-play-state: paused;
   transform-origin: bottom;
-}
-
-@media (max-width: 768px) {
-  .spherediv {
-    width: 200px;
-    height: 180px;
-  }
-
-  .sphereball {
-    width: 80px;
-    height: 80px;
-  }
-
-  .part2ballshadow {
-    width: 60px;
-    height: 10px;
-  }
-  .mymouse {
-    color:transparent;
-  }
+  position: relative;
+  bottom: -10px;
 }
 
 /* hover 时才加动画 */
@@ -83,13 +67,13 @@
 /* 弹跳 - 一个完整循环包括上弹和下落 */
 @keyframes shperebounce {
   0% {
-    transform: translateY(20px);
-  }
-  50% {
     transform: translateY(-80px);
   }
+  50% {
+    transform: translateY(-160px);
+  }
   100% {
-    transform: translateY(20px);
+    transform: translateY(-80px);
   }
 }
 
@@ -131,4 +115,34 @@
       /* translateX(0px) */
       rotate(0deg)
   }
+}
+
+@media (max-width: 768px) {
+  .spherediv {
+    width: 200px;
+    height: 180px;
+  }
+
+  .sphereball {
+    width: 80px;
+    height: 80px;
+  }
+
+  .part2ballshadow {
+    width: 60px;
+    height: 10px;
+    bottom: 55px;
+  }
+  @keyframes shperebounce {
+    0% {
+      transform: translateY(-60px);
+    }
+    50% {
+      transform: translateY(-120px);
+    }
+    100% {
+      transform: translateY(-60px);
+    }
+  }
+
 }

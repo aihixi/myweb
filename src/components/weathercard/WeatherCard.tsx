@@ -56,15 +56,25 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ refresh }) => {
   // ✅ 用 useState 保存天气数据
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const ref = React.useRef<HTMLDivElement>(null);
-
+  // 限制：至多 5s 一次
+  const lastFetchRef = React.useRef<number>(0);
+  
   useEffect(() => {
     if (refresh) {
       getWeatherClick();
     }
   }, [refresh]);
-
+  
   const getWeatherClick = async () => {
-    try {
+    const now = Date.now();
+    // 如果距离上次请求不足 5 秒，直接忽略
+    if (now - lastFetchRef.current < 5000) {
+      console.log("getWeatherClick: 调用过于频繁，已被忽略");
+      return;
+    }
+    // 记录此次调用时间（立即记录以防并发触发）
+    lastFetchRef.current = now;
+     try {
       // ✅ 1. 获取公网 IP
       const res = await fetch("https://ipapi.co/json/");
       const data = await res.json();
