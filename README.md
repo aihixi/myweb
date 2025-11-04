@@ -48,19 +48,19 @@ This project serves as a **personal portfolio website**, showcasing personal inf
 
 ### 4.3 Page Components
 
-#### Part1 - Home / Introduction  
+- Part1 - Home / Introduction  
 
-#### Part2 - Skills  
+- Part2 - Skills  
 
-#### Part3 - Education  
+- Part3 - Education  
 
-#### Part4 - Projects  
+- Part4 - Projects  
 
-#### Part5 - About  
+- Part5 - About  
 
-#### Part6 - Contact / Message  
+- Part6 - Contact / Message  
 
-#### Part7 - Drawer Menu  
+- Part7 - Drawer Menu  
 
 ### 4.4 Animation Module (myanimation)
 - [FallingPetals](https://codepen.io/rudtjd2548/pen/qBpVzxP?utm_source): Canvas-based petal-falling animation  

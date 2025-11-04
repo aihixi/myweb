@@ -48,19 +48,19 @@
 
 ### 4.3 页面视图组件 
 
-#### Part1 - 首页/个人简介
+- Part1 - 首页/个人简介
 
-#### Part2 - 技能展示
+- Part2 - 技能展示
 
-#### Part3 - 教育经历
+- Part3 - 教育经历
 
-#### Part4 - 项目展示
+- Part4 - 项目展示
 
-#### Part5 - 关于网站
+- Part5 - 关于网站
 
-#### Part6 - 联系我/留言
+- Part6 - 联系我/留言
 
-#### Part7 - 抽屉菜单
+- Part7 - 抽屉菜单
 
 ### 4.4 动画组件 (myanimation)
 - [FallingPetals](https://codepen.io/rudtjd2548/pen/qBpVzxP?utm_source): Canvas实现的花瓣飘落背景动画
