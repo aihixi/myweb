@@ -4,7 +4,7 @@ import './Contact.css';
 
 import BilibiliIcon from '../../assets/image/imgsvg/bilibili/icons8-bilibili.svg';
 import BilibiliColorIcon from '../../assets/image/imgsvg/bilibili/icons8-bilibili(1).svg';
-import BilibiliQR from '../../assets/image/QRcode/bilibili.png';
+import BilibiliQR from '../../assets/image/QRcode/github.png';
 
 import GithubIcon from '../../assets/image/imgsvg/github/icons8-github(2).svg';
 import GithubColorIcon from '../../assets/image/imgsvg/github/icons8-github(3).svg';

@@ -45,13 +45,13 @@ const Part2Text: React.FC = () => {
         </h1>
         <ul style={{ lineHeight: '1.6', padding: '0 8px', listStyle: 'none' }}>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', fontWeight: 'bold', textAlign: 'left' }}>
-                具备 Web 前端开发能力，能够基于业务需求打造高交互性、高性能的用户界面
+                具备 Web 前端开发能力，能够基于需求打造高交互性、高性能的用户界面
             </li>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', textAlign: 'left' }}>
-                基于 Vite 构建工具搭建高效开发环境, 运用 Vue3 与 React 两大主流框架，擅长组件化开发，保障代码可维护性与扩展性
+                基于 Vite 构建工具搭建高效开发环境, 运用 React 与 Vue3 两大主流框架，擅长组件化开发，保障代码可维护性与扩展性
             </li>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', textAlign: 'left' }}>
-                了解 Electron 技术，可将 Web 应用封装为跨平台桌面应用（Windows/macOS），拓展应用使用场景
+                了解 Electron 技术，可将 Web 应用封装为跨平台桌面应用（Windows/Linux/macOS），拓展应用使用场景
             </li>
             <li style={{ width: '90%', paddingLeft: '24px', marginBottom: '8px', fontSize: '2rem', textAlign: 'left' }}>
                 可以使用python，C++进行后端开发，并使用mysql进行数据库管理
