@@ -21,6 +21,8 @@ const Sphere: React.FC = () => {
     // 鼠标进入：启动动画 + 清除旧监听
     const handleBallEnter = () => {
         const ball = ballRef.current;
+        
+        
         if (ball) {
             // 清除之前绑定的所有 animationiteration 监听器
             if (ball._listeners) {
@@ -29,6 +31,14 @@ const Sphere: React.FC = () => {
                 });
                 ball._listeners = [];
             }
+            const onAnimationIteration = () => {
+                const ballAnimationName = getComputedStyle(ball).animationName;
+                const ballNames = ballAnimationName.split(',').map(name => name.trim());
+                ballNames[0] = "shperebounce";
+                ball.style.animationName = ballNames.join(", ");
+                ball.removeEventListener('animationiteration', onAnimationIteration);
+            };
+            ball.addEventListener('animationiteration', onAnimationIteration);
 
             ball.style.animationPlayState = 'running';
         }
@@ -39,29 +49,40 @@ const Sphere: React.FC = () => {
             mymouseRef.current.style.animationPlayState = 'running';
     };
   
-    // 鼠标离开：等动画循环完再停
     const handleBallLeave = () => {
         const ball = ballRef.current;
         const shadow = ballShadowRef.current;
         const mouse = mymouseRef.current;
 
         if (ball && shadow) {
-            let stopped = false;
+            let loopCount = 0;
 
-            const stopAfterLoop = () => {
-                if (stopped) return;
-                stopped = true;
-                ball.style.animationPlayState = 'paused';
-                shadow.style.animationPlayState = 'paused';
-                if (mouse) mouse.style.animationPlayState = 'paused';
-                ball.removeEventListener('animationiteration', stopAfterLoop);
+            const onLoop = () => {
+                loopCount++;
+                const animationName = getComputedStyle(ball).animationName;
+                const names = animationName.split(',').map(name => name.trim());
+
+                if (loopCount === 1) {
+                    // 第一次循环结束，切换动画
+                    names[0] = "shperebouncelater";
+                    ball.style.animationName = names.join(", ");
+                } else if (loopCount === 2) {
+                    // 第二次循环结束，暂停
+                    const ballAnimationName = getComputedStyle(ball).animationName;
+                    const ballNames = ballAnimationName.split(',').map(name => name.trim());
+                    ballNames[0] = "shperebounce";
+                    ball.style.animationName = ballNames.join(", ");
+                    ball.style.animationPlayState = 'paused';
+                    shadow.style.animationPlayState = 'paused';
+                    if (mouse) mouse.style.animationPlayState = 'paused';
+                    ball.removeEventListener('animationiteration', onLoop);
+                }
             };
 
-            // 记录监听函数，方便下次清除
             if (!ball._listeners) ball._listeners = [];
-            ball._listeners.push(stopAfterLoop);
+            ball._listeners.push(onLoop);
 
-            ball.addEventListener('animationiteration', stopAfterLoop);
+            ball.addEventListener('animationiteration', onLoop);
         }
     };
 
