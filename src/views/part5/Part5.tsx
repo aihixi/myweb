@@ -6,6 +6,30 @@ import CatEmoji from '../../assets/Lottie/cat Mark loading.json'
 
 const Part5: React.FC = () => { 
 
+//   {
+//     reverse: false,  // 反转倾斜方向
+//     max: 35,  // 最大倾斜角度（度）
+//     startX: 0,  // X 轴的初始倾斜角度，单位为度
+//     startY: 0,  // Y 轴的初始倾斜角度，单位为度
+//     perspective: 1000,  // 变换透视效果，值越小倾斜效果越极端
+//     scale: 1,  // 缩放比例，2 表示 200%，1.5 表示 150% 等
+//     speed: 300,  // 进入 / 退出时的过渡速度
+//     transition: true,  // 是否在进入 / 退出时设置过渡效果
+//     axis: null,  // 启用的轴，可以是 "x" 或 "y"
+//     reset: true,  // 倾斜效果是否在退出时重置
+//     "reset-to-start": true,  // 退出重置时是否回到 [startX, startY]（默认回到 [0,0]）
+//     easing: "cubic-bezier (.03,.98,.52,.99)",  // 进入 / 退出时的缓动函数
+//     glare: false,  // 是否启用 "眩光" 效果
+//     "max-glare": 1,  // "眩光" 的最大不透明度（1 表示 100%，0.5 表示 50%）
+//     "glare-prerender": false,  // false 表示由 VanillaTilt 自动创建眩光元素，否则需要手动添加.js-tilt-glare>.js-tilt-glare-inner
+//     "mouse-event-element": null,  // 监听鼠标事件的元素（CSS 选择器或 HTML 元素链接）
+//     gyroscope: true,  // 是否启用设备方向检测（布尔值）
+//     gyroscopeMinAngleX: -45,  // 设备 X 轴角度的下限，在此角度时元素倾斜效果相当于鼠标在元素左边界
+//     gyroscopeMaxAngleX: 45,  // 设备 X 轴角度的上限，在此角度时元素倾斜效果相当于鼠标在元素右边界
+//     gyroscopeMinAngleY: -45,  // 设备 Y 轴角度的下限，在此角度时元素倾斜效果相当于鼠标在元素上边界
+//     gyroscopeMaxAngleY: 45,  // 设备 Y 轴角度的上限，在此角度时元素倾斜效果相当于鼠标在元素下边界
+// }
+
   useEffect(() => {
     const elements = document.querySelectorAll('.part5allcard');
     const htmlElements = Array.from(elements) as HTMLElement[];
@@ -15,6 +39,7 @@ const Part5: React.FC = () => {
       scale: 1.1,
       glare: true,
       "max-glare": 0.5,
+      gyroscope: false, 
     });
   }, []);
 

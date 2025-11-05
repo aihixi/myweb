@@ -26,7 +26,7 @@
   background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, purple);
   background-size: 400% 400%;
   animation: 
-    shperebounce 1s infinite ease-in-out,
+    shperebounce 1s infinite,
     colorChange 3s infinite linear;
   animation-play-state: paused;
   z-index: 2;
@@ -66,14 +66,13 @@
 
 /* 弹跳 - 一个完整循环包括上弹和下落 */
 @keyframes shperebounce {
-  0% {
+  0%, 100% {
     transform: translateY(-80px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
   50% {
     transform: translateY(-160px);
-  }
-  100% {
-    transform: translateY(-80px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 }
 
@@ -133,16 +132,15 @@
     height: 10px;
     bottom: 55px;
   }
-  @keyframes shperebounce {
-    0% {
-      transform: translateY(-60px);
-    }
-    50% {
-      transform: translateY(-120px);
-    }
-    100% {
-      transform: translateY(-60px);
-    }
+@keyframes shperebounce {
+  0%, 100% {
+    transform: translateY(-60px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
+  50% {
+    transform: translateY(-120px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+}
 
 }
