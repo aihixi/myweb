@@ -20,7 +20,7 @@ export interface WeatherData {
   icon: string;
   air_quality_index: number | null;
 }
-const BASE_URL = "https://backend-hono-cloudflare.waw-980-0f9.workers.dev";
+const BASE_URL = "https://backendforice.dpdns.org";
 
 
 // 获取所有评论
