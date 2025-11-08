@@ -20,7 +20,8 @@ export interface WeatherData {
   icon: string;
   air_quality_index: number | null;
 }
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://backend-hono-cloudflare.waw-980-0f9.workers.dev";
+
 
 // 获取所有评论
 export const fetchComments = async (): Promise<CommentCardProps[]> => {
