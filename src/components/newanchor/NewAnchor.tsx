@@ -206,9 +206,11 @@ const NewAnchor: React.FC = () => {
             }}
         >
           <Alert
-            message="这个没什么用"
+            message="⚠️ 本网站正在开发阶段，部分功能可能不稳定，敬请谅解！ ⚠️"
             type="warning"
             closable
+            showIcon={false}
+            banner
           />
         </motion.nav>
         <section id="section1" className="section section1">

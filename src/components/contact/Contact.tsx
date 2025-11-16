@@ -53,23 +53,23 @@ const tiktokcontent = (
 const Contact: React.FC = () => {
     return (
         <div className='part2tag'>
-                <Popover className='part2tagstyle' placement="bottom" content={bilibilicontent} title="Bilibili">
-                    <img className='default' src={BilibiliIcon} alt="Bilibili" />
-                    <img className='hovercolor' src={BilibiliColorIcon} alt="Bilibili Color" />
-                </Popover >
-                <Popover className='part2tagstyle' placement="bottom" content={githubcontent} title="Github">
-                    <img className='default' src={GithubIcon} alt="Github" />
-                    <img className='hovercolor' src={GithubColorIcon} alt="Github Color" />
-                </Popover>
-                <Popover className='part2tagstyle' placement="bottom" content={tiktokcontent} title="Tiktok">
-                    <img className='default' src={TiktokIcon} alt="Tiktok" />
-                    <img className='hovercolor' src={TiktokColorIcon} alt="Tiktok Color" />
-                </Popover>
-                <Popover className='part2tagstyle' placement="bottom" content={wechatcontent} title="Wechat">
-                    <img className='default' src={WechatIcon} alt="Wechat" />
-                    <img className='hovercolor' src={WechatColorIcon} alt="Wechat Color" />
-                </Popover>
-            </div>
+            <Popover className='part2tagstyle' placement="bottom" content={bilibilicontent} title="Bilibili">
+                <img className='default' src={BilibiliIcon} alt="Bilibili" />
+                <img className='hovercolor' src={BilibiliColorIcon} alt="Bilibili Color" />
+            </Popover >
+            <Popover className='part2tagstyle' placement="bottom" content={githubcontent} title="Github">
+                <img className='default' src={GithubIcon} alt="Github" />
+                <img className='hovercolor' src={GithubColorIcon} alt="Github Color" />
+            </Popover>
+            <Popover className='part2tagstyle' placement="bottom" content={tiktokcontent} title="Tiktok">
+                <img className='default' src={TiktokIcon} alt="Tiktok" />
+                <img className='hovercolor' src={TiktokColorIcon} alt="Tiktok Color" />
+            </Popover>
+            <Popover className='part2tagstyle' placement="bottom" content={wechatcontent} title="Wechat">
+                <img className='default' src={WechatIcon} alt="Wechat" />
+                <img className='hovercolor' src={WechatColorIcon} alt="Wechat Color" />
+            </Popover>
+        </div>
     );
 };
 
