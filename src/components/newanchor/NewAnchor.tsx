@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useIsMobile } from "../../components/mediaquery/MediaQuery";
 import { Collapse } from "antd";
 import { CaretRightOutlined } from "@ant-design/icons";
+import { Alert } from 'antd';
 
 import "./NewAnchor.css";
 
@@ -97,6 +98,9 @@ const NewAnchor: React.FC = () => {
     else if (event.deltaY < 0) setInView(true);
   };
 
+
+  const isMobile = useIsMobile();
+
   // 动画效果
   const variants = {
     hidden: {
@@ -111,7 +115,19 @@ const NewAnchor: React.FC = () => {
     },
   };
 
-  const isMobile = useIsMobile();
+  const alertVariants = {
+    hidden: {
+      opacity: 1,
+      y: -64,
+      transition: { duration: 0.5 },
+    },
+    visible: {
+      opacity: 1,
+      y: isMobile ? -6 : 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
 
   return (
     <div onWheel={handleWheel}>
@@ -179,6 +195,22 @@ const NewAnchor: React.FC = () => {
 
       {/* 页面内容 */}
       <div className="content">
+        <motion.nav
+          initial="visible"
+          animate={inView ? "visible" : "hidden"}
+          variants={alertVariants}
+          style={{
+              width: '100%',
+              position: "fixed",
+              zIndex: 3,
+            }}
+        >
+          <Alert
+            message="这个没什么用"
+            type="warning"
+            closable
+          />
+        </motion.nav>
         <section id="section1" className="section section1">
           <Part1 />
         </section>
