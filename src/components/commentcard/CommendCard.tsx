@@ -40,7 +40,7 @@ const CommendCard: React.FC<CommendCardProps> = ({ refresh }) => {
           </div>
         ))
       ) : (
-        <div style={{ textAlign: "center", color: "#888", fontSize: "16px" }}>暂无评论</div>
+        <div style={{ textAlign: "center", color: "#888", fontSize: "16px" }}>功能暂停</div>
       )}
     </div>
   );

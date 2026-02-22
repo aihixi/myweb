@@ -20,7 +20,7 @@ export interface WeatherData {
   icon: string;
   air_quality_index: number | null;
 }
-const BASE_URL = "https://backendforice.dpdns.org";
+const BASE_URL = "";
 
 
 // 获取所有评论

@@ -29,7 +29,7 @@ const Part1: React.FC = () => {
                                     document.getElementById('section6')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
                             >
-                                <span style= {{ fontSize: '3rem', fontWeight: '900' }}>
+                                <span style= {{ fontSize: '3rem', fontWeight: '640' }}>
                                     Contact
                                 </span>
                             </Button>

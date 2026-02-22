@@ -15,6 +15,8 @@ import Part5 from "../../views/part5/Part5";
 import Part6 from "../../views/part6/Part6";
 import Part7 from "../../views/part7/Part7";
 
+import MyFloatButton from "../floatbutton/MyFloatButton";
+
 const sections = [
   { id: "section1", label: "Home" },
   { id: "section2", label: "Skills" },
@@ -231,6 +233,7 @@ const NewAnchor: React.FC = () => {
         <section id="section6" className="section section6">
           <Part6 />
         </section>
+        <MyFloatButton />
       </div>
 
       {/* Drawer */}
