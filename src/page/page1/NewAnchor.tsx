@@ -15,7 +15,7 @@ import Part5 from "../../views/part5/Part5";
 import Part6 from "../../views/part6/Part6";
 import Part7 from "../../views/part7/Part7";
 
-import MyFloatButton from "../floatbutton/MyFloatButton";
+import MyFloatButton from "../../components/floatbutton/MyFloatButton";
 
 const sections = [
   { id: "section1", label: "Home" },

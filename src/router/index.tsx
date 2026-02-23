@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Page1 from '../components/newanchor/NewAnchor';
+import Page1 from '../page/page1/NewAnchor';
 import Page2 from '../page/page2/Page2';
 import FallingPetals from "../components/myanimation/fallingpetals/FallingPetals";
 
